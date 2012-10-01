@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5119C7C2160F40D800D4CF10 /* UIWebView+injectJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5119C7C1160F40D800D4CF10 /* UIWebView+injectJS.m */; };
-		5119C7CE160F50AA00D4CF10 /* UIWebView+boosterTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5119C7CD160F50AA00D4CF10 /* UIWebView+boosterTools.m */; };
+		5126EB871619CB5900C09577 /* UIWebView+boosterTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5126EB841619CB5900C09577 /* UIWebView+boosterTools.m */; };
+		5126EB881619CB5900C09577 /* UIWebView+injectJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5126EB861619CB5900C09577 /* UIWebView+injectJS.m */; };
 		5161F54C1614510C001F2914 /* DetailViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5161F54A1614510C001F2914 /* DetailViewManager.m */; };
 		5161F54D1614510C001F2914 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5161F54B1614510C001F2914 /* MainWindow.xib */; };
 		5161F55216145412001F2914 /* DetailPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5161F55116145412001F2914 /* DetailPlaceholderViewController.m */; };
@@ -100,10 +100,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5119C7C0160F40D800D4CF10 /* UIWebView+injectJS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+injectJS.h"; sourceTree = "<group>"; };
-		5119C7C1160F40D800D4CF10 /* UIWebView+injectJS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+injectJS.m"; sourceTree = "<group>"; };
-		5119C7CC160F50AA00D4CF10 /* UIWebView+boosterTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+boosterTools.h"; sourceTree = "<group>"; };
-		5119C7CD160F50AA00D4CF10 /* UIWebView+boosterTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+boosterTools.m"; sourceTree = "<group>"; };
+		5126EB831619CB5900C09577 /* UIWebView+boosterTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+boosterTools.h"; path = "Categories/UIWebView+boosterTools.h"; sourceTree = "<group>"; };
+		5126EB841619CB5900C09577 /* UIWebView+boosterTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+boosterTools.m"; path = "Categories/UIWebView+boosterTools.m"; sourceTree = "<group>"; };
+		5126EB851619CB5900C09577 /* UIWebView+injectJS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+injectJS.h"; path = "Categories/UIWebView+injectJS.h"; sourceTree = "<group>"; };
+		5126EB861619CB5900C09577 /* UIWebView+injectJS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+injectJS.m"; path = "Categories/UIWebView+injectJS.m"; sourceTree = "<group>"; };
 		5161F5491614510C001F2914 /* DetailViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewManager.h; path = iBooster/iPad/DetailViewManager.h; sourceTree = "<group>"; };
 		5161F54A1614510C001F2914 /* DetailViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewManager.m; path = iBooster/iPad/DetailViewManager.m; sourceTree = "<group>"; };
 		5161F54B1614510C001F2914 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = iBooster/iPad/MainWindow.xib; sourceTree = "<group>"; };
@@ -255,10 +255,10 @@
 		5119C7DE160F6E4200D4CF10 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				5119C7C0160F40D800D4CF10 /* UIWebView+injectJS.h */,
-				5119C7C1160F40D800D4CF10 /* UIWebView+injectJS.m */,
-				5119C7CC160F50AA00D4CF10 /* UIWebView+boosterTools.h */,
-				5119C7CD160F50AA00D4CF10 /* UIWebView+boosterTools.m */,
+				5126EB831619CB5900C09577 /* UIWebView+boosterTools.h */,
+				5126EB841619CB5900C09577 /* UIWebView+boosterTools.m */,
+				5126EB851619CB5900C09577 /* UIWebView+injectJS.h */,
+				5126EB861619CB5900C09577 /* UIWebView+injectJS.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -443,9 +443,9 @@
 		51DF811C1619B9FC00F950E5 /* Marks */ = {
 			isa = PBXGroup;
 			children = (
-				51DF81B01619BC0F00F950E5 /* MarksFooterTableCell.xib */,
 				51DF811F1619BA1700F950E5 /* MarksFooterTableCell.h */,
 				51DF81201619BA1700F950E5 /* MarksFooterTableCell.m */,
+				51DF81B01619BC0F00F950E5 /* MarksFooterTableCell.xib */,
 				51DF81221619BA1700F950E5 /* MarksHeaderTableCell.h */,
 				51DF81231619BA1700F950E5 /* MarksHeaderTableCell.m */,
 				51DF81B21619BC0F00F950E5 /* MarksHeaderTableCell.xib */,
@@ -718,8 +718,6 @@
 				51D1549F160DE5B500524550 /* AppDelegate.m in Sources */,
 				51D154A8160DE5B500524550 /* MenuViewController.m in Sources */,
 				51D154DA160DE9D500524550 /* LoginViewController.m in Sources */,
-				5119C7C2160F40D800D4CF10 /* UIWebView+injectJS.m in Sources */,
-				5119C7CE160F50AA00D4CF10 /* UIWebView+boosterTools.m in Sources */,
 				5161F54C1614510C001F2914 /* DetailViewManager.m in Sources */,
 				5161F55216145412001F2914 /* DetailPlaceholderViewController.m in Sources */,
 				51DF812B1619BA1700F950E5 /* MarksFooterTableCell.m in Sources */,
@@ -748,6 +746,8 @@
 				51DF81A81619BB6A00F950E5 /* jquery.js in Sources */,
 				51DF81A91619BB6A00F950E5 /* toolkit.js in Sources */,
 				51DF81AF1619BBB300F950E5 /* LoadingTableViewController.m in Sources */,
+				5126EB871619CB5900C09577 /* UIWebView+boosterTools.m in Sources */,
+				5126EB881619CB5900C09577 /* UIWebView+injectJS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
