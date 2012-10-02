@@ -25,36 +25,21 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
-#import "LoginViewController.h"
-#import "MarksController.h"
-#import "TSMiniWebBrowser.h"
-#import "DetailViewManager.h"
-#import "PlanningController.h"
-#import "SummaryController.h"
+#import <Foundation/Foundation.h>
 
-@class DetailViewController;
+#define MAX_CREDITS 70
+#define PASS_CREDITS 60
 
-#define TAG_URL 1
-#define TAG_LOGOUT 2
-#define TAG_PLANING 3
-#define TAG_MARKS 4
-#define TAG_SUMMARY 5
-#define TAG_FINANCE 6
-#define TAG_INTERNSHIPS 7
-#define TAG_DOCUMENTS 8
-
-@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UIWebViewDelegate> {
-    NSArray *data;
-    UIWebView *internalWebView;
+@interface Summary : NSObject {
+    NSString *title;
+    int mark;
+    int markTheory; //Le total théorique de crédits, mais il peut être limité (anciens ratrappages -> arrondi à 60)
+    NSString *percentage;
 }
 
-- (void) userDidLogin;
-- (void) logout;
-- (void) openInAppBrowser:(NSString*) url;
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) DetailViewController *detailViewController;
-@property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, assign) int mark;
+@property (nonatomic, assign) int markTheory;
+@property (nonatomic, strong) NSString *percentage;
 
 @end

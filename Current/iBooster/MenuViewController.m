@@ -122,6 +122,9 @@
                     case TAG_PLANING:
                         vc = [[PlanningController alloc] init];
                         break;
+                    case TAG_SUMMARY:
+                        vc = [[SummaryController alloc] init];
+                        break;
                     default:
                         NSLog(@"Unrecognized tag : %i, section %i, row %i", tag, section, row);
                         break;

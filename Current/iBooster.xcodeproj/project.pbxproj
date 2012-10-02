@@ -14,6 +14,12 @@
 		5161F55216145412001F2914 /* DetailPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5161F55116145412001F2914 /* DetailPlaceholderViewController.m */; };
 		5161F5551614567F001F2914 /* LoadingTableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5161F5531614567F001F2914 /* LoadingTableViewController~ipad.xib */; };
 		5161F5631614908B001F2914 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5161F5621614908B001F2914 /* QuartzCore.framework */; };
+		51762CFE161B2898001B767E /* SummaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51762CFD161B2898001B767E /* SummaryController.m */; };
+		51762D02161B290D001B767E /* Summary.m in Sources */ = {isa = PBXBuildFile; fileRef = 51762D01161B290D001B767E /* Summary.m */; };
+		51762D06161B2C01001B767E /* SummaryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51762D05161B2C01001B767E /* SummaryTableCell.m */; };
+		51762D09161B2C2A001B767E /* SummaryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51762D07161B2C2A001B767E /* SummaryTableCell.xib */; };
+		51762D0A161B3A8B001B767E /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81A61619BB6A00F950E5 /* jquery.js */; };
+		51762D0B161B3A8B001B767E /* toolkit.js in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81A71619BB6A00F950E5 /* toolkit.js */; };
 		51B75CB216121ED200ABCAB6 /* LoadingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51B75CB016121ED200ABCAB6 /* LoadingTableViewController.xib */; };
 		51B75D011613A51000ABCAB6 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B75CFD1613A51000ABCAB6 /* icon-ipad.png */; };
 		51B75D021613A51000ABCAB6 /* icon-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B75CFE1613A51000ABCAB6 /* icon-ipad@2x.png */; };
@@ -78,8 +84,6 @@
 		51DF81A31619BB5200F950E5 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51DF819C1619BB5200F950E5 /* Default-Portrait~ipad.png */; };
 		51DF81A41619BB5200F950E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 51DF819D1619BB5200F950E5 /* Default.png */; };
 		51DF81A51619BB5200F950E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51DF819E1619BB5200F950E5 /* Default@2x.png */; };
-		51DF81A81619BB6A00F950E5 /* jquery.js in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81A61619BB6A00F950E5 /* jquery.js */; };
-		51DF81A91619BB6A00F950E5 /* toolkit.js in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81A71619BB6A00F950E5 /* toolkit.js */; };
 		51DF81AC1619BB8100F950E5 /* MarksWindowHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81AA1619BB8100F950E5 /* MarksWindowHeader.xib */; };
 		51DF81AF1619BBB300F950E5 /* LoadingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81AE1619BBB300F950E5 /* LoadingTableViewController.m */; };
 		51DF81B81619BC0F00F950E5 /* MarksFooterTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81B01619BC0F00F950E5 /* MarksFooterTableCell.xib */; };
@@ -112,6 +116,13 @@
 		5161F5541614567F001F2914 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iBooster/en.lproj/LoadingTableViewController~ipad.xib"; sourceTree = "<group>"; };
 		5161F5621614908B001F2914 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5161F56916151D8C001F2914 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		51762CFC161B2898001B767E /* SummaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryController.h; path = "iBooster/Content Controllers/SummaryController.h"; sourceTree = "<group>"; };
+		51762CFD161B2898001B767E /* SummaryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SummaryController.m; path = "iBooster/Content Controllers/SummaryController.m"; sourceTree = "<group>"; };
+		51762D00161B290D001B767E /* Summary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Summary.h; path = iBooster/Models/Summary.h; sourceTree = "<group>"; };
+		51762D01161B290D001B767E /* Summary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Summary.m; path = iBooster/Models/Summary.m; sourceTree = "<group>"; };
+		51762D04161B2C01001B767E /* SummaryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryTableCell.h; path = "iBooster/Table cells/Summary/SummaryTableCell.h"; sourceTree = "<group>"; };
+		51762D05161B2C01001B767E /* SummaryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SummaryTableCell.m; path = "iBooster/Table cells/Summary/SummaryTableCell.m"; sourceTree = "<group>"; };
+		51762D08161B2C2A001B767E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/SummaryTableCell.xib; sourceTree = "<group>"; };
 		51B75CB116121ED200ABCAB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LoadingTableViewController.xib; sourceTree = "<group>"; };
 		51B75CFD1613A51000ABCAB6 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad.png"; path = "iBooster/Images/icon-ipad.png"; sourceTree = "<group>"; };
 		51B75CFE1613A51000ABCAB6 /* icon-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad@2x.png"; path = "iBooster/Images/icon-ipad@2x.png"; sourceTree = "<group>"; };
@@ -277,6 +288,16 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		51762D03161B2BAF001B767E /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				51762D04161B2C01001B767E /* SummaryTableCell.h */,
+				51762D05161B2C01001B767E /* SummaryTableCell.m */,
+				51762D07161B2C2A001B767E /* SummaryTableCell.xib */,
+			);
+			name = Summary;
+			sourceTree = "<group>";
+		};
 		51B75CBB1612288700ABCAB6 /* Abstract Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +319,8 @@
 				51DF818D1619BB0200F950E5 /* PlanningController.m */,
 				51D359EA1615EFC000861463 /* PlanningViewController.xib */,
 				51D35A0E1615F39700861463 /* PlanningViewController~ipad.xib */,
+				51762CFC161B2898001B767E /* SummaryController.h */,
+				51762CFD161B2898001B767E /* SummaryController.m */,
 			);
 			name = "Content Controllers";
 			path = ..;
@@ -310,6 +333,8 @@
 				51DF81851619BA8F00F950E5 /* PlanningEvent.m */,
 				51DF81331619BA5100F950E5 /* Marks.h */,
 				51DF81341619BA5100F950E5 /* Marks.m */,
+				51762D00161B290D001B767E /* Summary.h */,
+				51762D01161B290D001B767E /* Summary.m */,
 			);
 			name = Models;
 			path = ..;
@@ -318,6 +343,7 @@
 		51B75CC4161343EE00ABCAB6 /* Table cells */ = {
 			isa = PBXGroup;
 			children = (
+				51762D03161B2BAF001B767E /* Summary */,
 				51DF811C1619B9FC00F950E5 /* Marks */,
 			);
 			name = "Table cells";
@@ -643,6 +669,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51762D0A161B3A8B001B767E /* jquery.js in Resources */,
+				51762D0B161B3A8B001B767E /* toolkit.js in Resources */,
 				51D15499160DE5B500524550 /* InfoPlist.strings in Resources */,
 				51D154AE160DE5B500524550 /* MenuViewController.xib in Resources */,
 				51B75CB216121ED200ABCAB6 /* LoadingTableViewController.xib in Resources */,
@@ -680,6 +708,7 @@
 				51DF81BA1619BC0F00F950E5 /* MarksScrollingHeaderView.xib in Resources */,
 				51DF81BB1619BC0F00F950E5 /* MarksTableCell.xib in Resources */,
 				51DF81BE1619BC5100F950E5 /* LoginViewController.xib in Resources */,
+				51762D09161B2C2A001B767E /* SummaryTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,11 +772,12 @@
 				51DF81861619BA8F00F950E5 /* PlanningEvent.m in Sources */,
 				51DF818E1619BB0200F950E5 /* MarksController.m in Sources */,
 				51DF818F1619BB0200F950E5 /* PlanningController.m in Sources */,
-				51DF81A81619BB6A00F950E5 /* jquery.js in Sources */,
-				51DF81A91619BB6A00F950E5 /* toolkit.js in Sources */,
 				51DF81AF1619BBB300F950E5 /* LoadingTableViewController.m in Sources */,
 				5126EB871619CB5900C09577 /* UIWebView+boosterTools.m in Sources */,
 				5126EB881619CB5900C09577 /* UIWebView+injectJS.m in Sources */,
+				51762CFE161B2898001B767E /* SummaryController.m in Sources */,
+				51762D02161B290D001B767E /* Summary.m in Sources */,
+				51762D06161B2C01001B767E /* SummaryTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +806,14 @@
 				5161F5541614567F001F2914 /* en */,
 			);
 			name = "LoadingTableViewController~ipad.xib";
+			sourceTree = "<group>";
+		};
+		51762D07161B2C2A001B767E /* SummaryTableCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51762D08161B2C2A001B767E /* en */,
+			);
+			name = SummaryTableCell.xib;
 			sourceTree = "<group>";
 		};
 		51B75CB016121ED200ABCAB6 /* LoadingTableViewController.xib */ = {

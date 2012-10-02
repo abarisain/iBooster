@@ -62,7 +62,7 @@
     [[self getNavigationItem] setTitle:self.title];
     internalWebView = [[UIWebView alloc] initWithFrame:CGRectNull];
     [internalWebView setDelegate:self];
-    [internalWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.campus-booster.net/Booster/students/%@.aspx", [self getBoosterPageUrl]]]]];
+    [internalWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.campus-booster.net/Booster/students/%@.aspx%@", [self getBoosterPageUrl], [self getBoosterPageUrlParameter]]]]];
     if (self.navigationPaneBarButtonItem) {
         [self.iPadNavigationBar.topItem setLeftBarButtonItem:self.navigationPaneBarButtonItem
                                                 animated:NO];
@@ -95,6 +95,7 @@
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return [tableData count];
 }
+
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[[tableData objectAtIndex:section] objectForKey:@"rows"] count];
 }
@@ -185,9 +186,15 @@
 
 - (NSString*)getBoosterPageUrl {
     //Example : return @"marks";
-    //La page ouverte sera http://www.campus-booster.net/Booster/students/ + getBoosterPageUrl + .aspx
+    //La page ouverte sera http://www.campus-booster.net/Booster/students/ + getBoosterPageUrl + getBoosterPageUrlParameter + .aspx
     [self doesNotRecognizeSelector:_cmd];
     return nil;
+}
+
+- (NSString*)getBoosterPageUrlParameter {
+    //Example : return @"?kind=Summary";
+    //La page ouverte sera http://www.campus-booster.net/Booster/students/ + getBoosterPageUrl + .aspx
+    return @"";
 }
 
 - (NSString*)getBoosterKitFunctionToExecute {

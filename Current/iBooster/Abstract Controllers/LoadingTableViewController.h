@@ -38,6 +38,7 @@
 - (void)applyUITableViewTheme;
 - (NSString*)getTitle;
 - (NSString*)getBoosterPageUrl;
+- (NSString*)getBoosterPageUrlParameter;
 - (NSString*)getBoosterKitFunctionToExecute;
 - (void)dataParsed:(NSDictionary*) data;
 

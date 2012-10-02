@@ -26,35 +26,14 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "LoginViewController.h"
-#import "MarksController.h"
-#import "TSMiniWebBrowser.h"
-#import "DetailViewManager.h"
-#import "PlanningController.h"
-#import "SummaryController.h"
+#import "Summary.h"
 
-@class DetailViewController;
+@interface SummaryTableCell : UITableViewCell
 
-#define TAG_URL 1
-#define TAG_LOGOUT 2
-#define TAG_PLANING 3
-#define TAG_MARKS 4
-#define TAG_SUMMARY 5
-#define TAG_FINANCE 6
-#define TAG_INTERNSHIPS 7
-#define TAG_DOCUMENTS 8
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *credits;
+@property (weak, nonatomic) IBOutlet UIProgressView *progress;
 
-@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UIWebViewDelegate> {
-    NSArray *data;
-    UIWebView *internalWebView;
-}
-
-- (void) userDidLogin;
-- (void) logout;
-- (void) openInAppBrowser:(NSString*) url;
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) DetailViewController *detailViewController;
-@property (weak, nonatomic) IBOutlet UIView *loadingView;
+-(void) displaySummary:(Summary*)summary;
 
 @end

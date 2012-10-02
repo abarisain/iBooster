@@ -1,29 +1,4 @@
-/*
- * Copyright (c) 2012 Arnaud Barisain Monrose. All rights reserved.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- * 3. The name of the author may not be used to endorse or promote products
- *    derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
- * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
- * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
- * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
- * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
- * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+/*Blah blah gpl shit*/
 
 var iBoosterToolkit = {};
 
@@ -49,7 +24,7 @@ iBoosterToolkit.parseMarks = function () {
     //console.time("counter");
     var marksContainer = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain");
     if(marksContainer.length == 0) {
-        return {};
+        return {"error": true};
     }
     marksContainer = null;
     var marks = [];
@@ -96,7 +71,7 @@ iBoosterToolkit.getPlanningFormBody = function() {
 iBoosterToolkit.parseSummary = function (table) {
     var marksContainer = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain");
     if(marksContainer.length == 0) {
-        return {};
+        return {"error": true};
     }
     marksContainer = null;
     var summaries = [];
@@ -106,10 +81,11 @@ iBoosterToolkit.parseSummary = function (table) {
         var tmp = summaryRawRows.eq(i).find("td");
         var parsedSummary = {};
         parsedSummary.title = tmp[0].innerText;
+        parsedSummary.percentage = tmp[4].innerText;
         tmp = tmp[2].innerText.match(/[0-9]+/g);
         parsedSummary.mark = tmp[0];
         parsedSummary.markTheory = tmp[1];
         summaryRows.push(parsedSummary);
     };
-    return summaryRows;
+    return {"summaries" : summaryRows};
 }
