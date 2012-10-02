@@ -144,9 +144,8 @@
     NSString *fileName = [NSString stringWithFormat:@"%@/planning.ics",
                           documentsDirectory];
     //save content to the documents directory
-    //!!!! DO NOT WRITE !!!! CAMPUS BOOSTER'S NEXT PLANNING WILL BE EMPTY
-    /*[receivedData writeToFile:fileName
-              atomically:NO];*/
+    [receivedData writeToFile:fileName
+              atomically:NO];
     
     CGICalendar *ical = [[CGICalendar alloc] init];
     if ([ical parseWithPath:fileName error:nil]) {
