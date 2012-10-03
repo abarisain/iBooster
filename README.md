@@ -34,3 +34,5 @@ Cette bibliothèque Javascript réutilisable parse la page affichée et renvoie 
 
 [cybergarage/iCal4ObjC](https://github.com/cybergarage/iCal4ObjC) Parser iCal pour le planning
 
+[johnezang/JSONKit](https://github.com/johnezang/JSONKit) Parser JSON (version iOS 4/armv6 uniquement)
+
