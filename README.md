@@ -2,7 +2,7 @@
 
 Etudiant à SUPINFO ? **iBooster** est une application vous permettant de naviguer plus facilement sur campus-booster via une application mobile native.
 
-![iOS Planning Screenshot](Screenshots/readme_ios.png)
+![iOS Planning Screenshot](iBooster/master/Screenshots/readme_ios.png)
 
 ## iBooster
 
