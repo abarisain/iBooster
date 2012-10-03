@@ -173,6 +173,16 @@
     return (self.iPadNavigationItem != nil ? self.iPadNavigationItem : self.navigationItem);
 }
 
+#pragma mark UIAlertView delegate
+
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+}
+
 #pragma mark Abstract Methods to override
 
 - (void)applyUITableViewTheme {

@@ -28,7 +28,7 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewManager.h"
 
-@interface LoadingTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UIWebViewDelegate, SubstitutableDetailViewController> {
+@interface LoadingTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate, SubstitutableDetailViewController> {
     NSArray *tableData;
     UIWebView *internalWebView;
 }
