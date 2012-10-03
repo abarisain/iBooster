@@ -57,8 +57,7 @@
     internalWebView = [[UIWebView alloc] initWithFrame:CGRectNull];
 
     [internalWebView setDelegate:self];
-    [internalWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.campus-booster.net/Booster/students/marks.aspx"]]];
-    
+    [self loadCampusBooster];
 }
 
 #pragma mark Table View Methods
@@ -161,23 +160,67 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    if(loginRedirectionTimer != nil) {
+        [loginRedirectionTimer invalidate];
+        loginRedirectionTimer = nil;
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    [webView injectToolkit];
-    if([webView isLoggedIn]) {
+    if(loginRedirectionTimer != nil) {
+        [loginRedirectionTimer invalidate];
+        loginRedirectionTimer = nil;
+    }
+    loginRedirectionTimer = [NSTimer scheduledTimerWithTimeInterval:3.0
+                                     target:self
+                                   selector:@selector(checkLoggedIn)
+                                   userInfo:nil
+                                    repeats:NO];
+
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    if(loginRedirectionTimer != nil) {
+        [loginRedirectionTimer invalidate];
+        loginRedirectionTimer = nil;
+    }
+    // To avoid getting an error alert when you click on a link
+    // before a request has finished loading.
+    if ([error code] == NSURLErrorCancelled) {
+        return;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Erreur lors du chargement des données", nil)
+                                                    message:@"Merci de vérifier votre connexion réseau."
+                                                   delegate:self
+                                          cancelButtonTitle:nil
+                                          otherButtonTitles:NSLocalizedString(@"Réessayer", nil), nil];
+	[alert show];
+}
+
+#pragma mark UIAlertView delegate
+-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        [self loadCampusBooster];
+    } 
+}
+
+#pragma mark Helper Methods
+
+- (void) loadCampusBooster {
+    [internalWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:BOOSTER_DEFAULT_URL]]];
+}
+
+- (void) checkLoggedIn {
+    [internalWebView injectToolkit];
+    if([internalWebView isLoggedIn]) {
         [self userDidLogin];
     } else {
         [self showLoginPopup];
     }
 }
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-}
-
-#pragma mark Helper Methods
 
 - (void) refreshCellData {
 	NSArray *rows;

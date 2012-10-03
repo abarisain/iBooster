@@ -44,11 +44,16 @@
 #define TAG_INTERNSHIPS 7
 #define TAG_DOCUMENTS 8
 
-@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UIWebViewDelegate> {
+#define BOOSTER_DEFAULT_URL @"http://www.campus-booster.net/Booster/students/marks.aspx"
+
+@interface MenuViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UIWebViewDelegate,UIAlertViewDelegate> {
     NSArray *data;
     UIWebView *internalWebView;
+    NSTimer *loginRedirectionTimer;
 }
 
+- (void) loadCampusBooster;
+- (void) checkLoggedIn;
 - (void) userDidLogin;
 - (void) logout;
 - (void) openInAppBrowser:(NSString*) url;
