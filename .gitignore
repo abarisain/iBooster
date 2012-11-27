@@ -110,3 +110,12 @@ xcuserdata
 
 *.moved-aside
 
+
+####
+# Android stuff
+
+/Android/bin
+/Android/gen
+/Android/.classpath
+/Android/local.properties
+/Android/proguard
