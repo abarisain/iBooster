@@ -1,6 +1,6 @@
 ## Introduction
 
-Etudiant à SUPINFO ? **iBooster** est une application vous permettant de naviguer plus facilement sur campus-booster via une application mobile native.
+Etudiant à SUPINFO ? **dBooster** est une application vous permettant de naviguer plus facilement sur campus-booster via une application mobile native.
 
 ![iOS Planning Screenshot](https://raw.github.com/abarisain/iBooster/master/Screenshots/readme_ios.png)
 

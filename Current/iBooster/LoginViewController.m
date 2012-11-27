@@ -54,7 +54,7 @@
 }
 
 - (void)showLoginAlertMessage {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"iBooster"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"dBooster"
                                                       message:@"N'oubliez pas de cocher \"Se souvenir de moi\" sur les deux pages de connexion !\nLe cas échéant, vous devrez vous reconnecter à chaque utilisation de l'application."
                                                      delegate:nil
                                             cancelButtonTitle:@"OK"

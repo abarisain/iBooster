@@ -191,7 +191,7 @@
 }
 
 - (NSString*)getTitle {
-    return @"iBooster";
+    return @"dBooster";
 }
 
 - (NSString*)getBoosterPageUrl {
