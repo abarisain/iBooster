@@ -601,9 +601,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		51D15489160DE5B500524550 /* iBooster */ = {
+		51D15489160DE5B500524550 /* dBooster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 51D154CF160DE5B600524550 /* Build configuration list for PBXNativeTarget "iBooster" */;
+			buildConfigurationList = 51D154CF160DE5B600524550 /* Build configuration list for PBXNativeTarget "dBooster" */;
 			buildPhases = (
 				51D15486160DE5B500524550 /* Sources */,
 				51D15487160DE5B500524550 /* Frameworks */,
@@ -613,14 +613,14 @@
 			);
 			dependencies = (
 			);
-			name = iBooster;
+			name = dBooster;
 			productName = iBooster;
 			productReference = 51D1548A160DE5B500524550 /* iBooster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		51D154BC160DE5B600524550 /* iBoosterTests */ = {
+		51D154BC160DE5B600524550 /* dBoosterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 51D154D2160DE5B600524550 /* Build configuration list for PBXNativeTarget "iBoosterTests" */;
+			buildConfigurationList = 51D154D2160DE5B600524550 /* Build configuration list for PBXNativeTarget "dBoosterTests" */;
 			buildPhases = (
 				51D154B8160DE5B600524550 /* Sources */,
 				51D154B9160DE5B600524550 /* Frameworks */,
@@ -632,7 +632,7 @@
 			dependencies = (
 				51D154C3160DE5B600524550 /* PBXTargetDependency */,
 			);
-			name = iBoosterTests;
+			name = dBoosterTests;
 			productName = iBoosterTests;
 			productReference = 51D154BD160DE5B600524550 /* iBoosterTests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -658,8 +658,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				51D15489160DE5B500524550 /* iBooster */,
-				51D154BC160DE5B600524550 /* iBoosterTests */,
+				51D15489160DE5B500524550 /* dBooster */,
+				51D154BC160DE5B600524550 /* dBoosterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -794,7 +794,7 @@
 /* Begin PBXTargetDependency section */
 		51D154C3160DE5B600524550 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 51D15489160DE5B500524550 /* iBooster */;
+			target = 51D15489160DE5B500524550 /* dBooster */;
 			targetProxy = 51D154C2160DE5B600524550 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1053,7 +1053,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		51D154CF160DE5B600524550 /* Build configuration list for PBXNativeTarget "iBooster" */ = {
+		51D154CF160DE5B600524550 /* Build configuration list for PBXNativeTarget "dBooster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				51D154D0160DE5B600524550 /* Debug */,
@@ -1062,7 +1062,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		51D154D2160DE5B600524550 /* Build configuration list for PBXNativeTarget "iBoosterTests" */ = {
+		51D154D2160DE5B600524550 /* Build configuration list for PBXNativeTarget "dBoosterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				51D154D3160DE5B600524550 /* Debug */,
