@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'dBooster' target in the 'dBooster' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
