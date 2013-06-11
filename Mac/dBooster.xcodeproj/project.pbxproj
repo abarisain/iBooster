@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5149F85B166532CB00681376 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 5149F856166532BF00681376 /* jquery.js */; };
+		5149F85C166532CD00681376 /* toolkit.js in Resources */ = {isa = PBXBuildFile; fileRef = 5149F857166532BF00681376 /* toolkit.js */; };
+		5149F86A1665370800681376 /* SSSelectableToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5149F8671665370800681376 /* SSSelectableToolbar.m */; };
+		5149F86B1665370800681376 /* SSSelectableToolbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5149F8691665370800681376 /* SSSelectableToolbarItem.m */; };
+		5149F86F1665397E00681376 /* MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5149F86E1665397E00681376 /* MainWindow.m */; };
 		51AD56C5166523C5004264BC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51AD56C4166523C5004264BC /* Cocoa.framework */; };
 		51AD56CF166523C5004264BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 51AD56CD166523C5004264BC /* InfoPlist.strings */; };
 		51AD56D1166523C5004264BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AD56D0166523C5004264BC /* main.m */; };
@@ -16,6 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5149F856166532BF00681376 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		5149F857166532BF00681376 /* toolkit.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = toolkit.js; sourceTree = "<group>"; };
+		5149F8661665370800681376 /* SSSelectableToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSelectableToolbar.h; sourceTree = "<group>"; };
+		5149F8671665370800681376 /* SSSelectableToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSelectableToolbar.m; sourceTree = "<group>"; };
+		5149F8681665370800681376 /* SSSelectableToolbarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSelectableToolbarItem.h; sourceTree = "<group>"; };
+		5149F8691665370800681376 /* SSSelectableToolbarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSelectableToolbarItem.m; sourceTree = "<group>"; };
+		5149F86D1665397E00681376 /* MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindow.h; path = "dBooster/Window Controllers/MainWindow.h"; sourceTree = "<group>"; };
+		5149F86E1665397E00681376 /* MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindow.m; path = "dBooster/Window Controllers/MainWindow.m"; sourceTree = "<group>"; };
 		51AD56C0166523C5004264BC /* dBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AD56C4166523C5004264BC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		51AD56C7166523C5004264BC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -43,6 +56,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5149F855166532BF00681376 /* Javascript */ = {
+			isa = PBXGroup;
+			children = (
+				5149F856166532BF00681376 /* jquery.js */,
+				5149F857166532BF00681376 /* toolkit.js */,
+			);
+			path = Javascript;
+			sourceTree = "<group>";
+		};
+		5149F8651665370800681376 /* toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				5149F8661665370800681376 /* SSSelectableToolbar.h */,
+				5149F8671665370800681376 /* SSSelectableToolbar.m */,
+				5149F8681665370800681376 /* SSSelectableToolbarItem.h */,
+				5149F8691665370800681376 /* SSSelectableToolbarItem.m */,
+			);
+			path = toolbar;
+			sourceTree = "<group>";
+		};
+		5149F86C1665395600681376 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5149F86D1665397E00681376 /* MainWindow.h */,
+				5149F86E1665397E00681376 /* MainWindow.m */,
+			);
+			name = "Window Controllers";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		51AD56B5166523C5004264BC = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +125,9 @@
 		51AD56CA166523C5004264BC /* dBooster */ = {
 			isa = PBXGroup;
 			children = (
+				5149F8651665370800681376 /* toolbar */,
+				5149F855166532BF00681376 /* Javascript */,
+				5149F86C1665395600681376 /* Window Controllers */,
 				51AD56D6166523C5004264BC /* AppDelegate.h */,
 				51AD56D7166523C5004264BC /* AppDelegate.m */,
 				51AD56D9166523C5004264BC /* MainMenu.xib */,
@@ -154,6 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				51AD56CF166523C5004264BC /* InfoPlist.strings in Resources */,
+				5149F85B166532CB00681376 /* jquery.js in Resources */,
+				5149F85C166532CD00681376 /* toolkit.js in Resources */,
 				51AD56D5166523C5004264BC /* Credits.rtf in Resources */,
 				51AD56DB166523C5004264BC /* MainMenu.xib in Resources */,
 			);
@@ -168,6 +216,9 @@
 			files = (
 				51AD56D1166523C5004264BC /* main.m in Sources */,
 				51AD56D8166523C5004264BC /* AppDelegate.m in Sources */,
+				5149F86A1665370800681376 /* SSSelectableToolbar.m in Sources */,
+				5149F86B1665370800681376 /* SSSelectableToolbarItem.m in Sources */,
+				5149F86F1665397E00681376 /* MainWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +348,7 @@
 				51AD56E0166523C5004264BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
