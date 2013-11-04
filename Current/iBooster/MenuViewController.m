@@ -216,7 +216,7 @@
 
 - (void) checkLoggedIn {
     [internalWebView injectToolkit];
-    if(false && [internalWebView isLoggedIn]) {
+    if([internalWebView isLoggedIn]) {
         [self userDidLogin];
     } else {
         [self showLoginPopup];
