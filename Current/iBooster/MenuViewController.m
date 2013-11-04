@@ -251,7 +251,7 @@
             @"http://libraries.supinfo.com",
             @"http://spr.supinfo.com",
             @"http://support.supinfo.com",
-            @"http://www.outlook.com",
+            @"http://mail.office365.com",
             nil];
     tags = [NSArray arrayWithObjects:tagUrl,tagUrl,tagUrl,tagUrl,tagUrl,tagUrl,nil];
 	d = [NSDictionary dictionaryWithObjectsAndKeys:rows,@"rows",@"Portails",@"title",urls,@"urls",tags,@"tags",nil];
