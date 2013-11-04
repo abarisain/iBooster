@@ -49,9 +49,9 @@
         self.title = [self getTitle];
         [self tableView].delegate = self;
         [self tableView].dataSource = self;
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-        }
+        }*/
     }
     return self;
 }
@@ -63,10 +63,10 @@
     internalWebView = [[UIWebView alloc] initWithFrame:CGRectNull];
     [internalWebView setDelegate:self];
     [internalWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.campus-booster.net/Booster/students/%@.aspx%@", [self getBoosterPageUrl], [self getBoosterPageUrlParameter]]]]];
-    if (self.navigationPaneBarButtonItem) {
+    /*if (self.navigationPaneBarButtonItem) {
         [self.iPadNavigationBar.topItem setLeftBarButtonItem:self.navigationPaneBarButtonItem
                                                 animated:NO];
-    }
+    }*/
 }
 
 #pragma mark -
@@ -83,8 +83,8 @@
 {
     if (navigationPaneBarButtonItem != _navigationPaneBarButtonItem) {
         // Add the popover button to the left navigation item.
-        [self.iPadNavigationBar.topItem setLeftBarButtonItem:navigationPaneBarButtonItem
-                                                animated:NO];
+        /*[self.iPadNavigationBar.topItem setLeftBarButtonItem:navigationPaneBarButtonItem
+                                                animated:NO];*/
         
         _navigationPaneBarButtonItem = navigationPaneBarButtonItem;
     }
@@ -166,20 +166,20 @@
 #pragma mark Helper methods
 
 - (UINavigationBar*) getNavigationBar {
-    return (self.iPadNavigationBar != nil ? self.iPadNavigationBar : self.navigationController.navigationBar);
+    return self.navigationController.navigationBar;
 }
 
 - (UINavigationItem*) getNavigationItem {
-    return (self.iPadNavigationItem != nil ? self.iPadNavigationItem : self.navigationItem);
+    return self.navigationItem;
 }
 
 #pragma mark UIAlertView delegate
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {*/
             [self.navigationController popViewControllerAnimated:YES];
-        }
+        /*}*/
     }
 }
 

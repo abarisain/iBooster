@@ -26,9 +26,8 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "DetailViewManager.h"
 
-@interface LoadingTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate, SubstitutableDetailViewController> {
+@interface LoadingTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, UIAlertViewDelegate> {
     NSArray *tableData;
     UIWebView *internalWebView;
 }
@@ -44,9 +43,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
-
-@property (weak, nonatomic) IBOutlet UINavigationBar *iPadNavigationBar;
-@property (weak, nonatomic) IBOutlet UINavigationItem *iPadNavigationItem;
 
 /// SubstitutableDetailViewController
 @property (nonatomic, retain) UIBarButtonItem *navigationPaneBarButtonItem;

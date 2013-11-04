@@ -29,7 +29,6 @@
 #import "LoginViewController.h"
 #import "MarksController.h"
 #import "TSMiniWebBrowser.h"
-#import "DetailViewManager.h"
 #import "PlanningController.h"
 #import "SummaryController.h"
 

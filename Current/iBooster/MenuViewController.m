@@ -43,9 +43,9 @@
         self.title = @"dBooster";
         [self tableView].delegate = self;
         [self tableView].dataSource = self;
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-        }
+        }*/
     }
     return self;
 }
@@ -78,7 +78,8 @@
     
 	cell.textLabel.text = [[[data objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
 	
-    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad || (indexPath.section == 3 && indexPath.row == 0)) {
+    //if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad || (indexPath.section == 2 && indexPath.row == 0)) {
+    if(indexPath.section == 2  && indexPath.row == 0) {
         cell.accessoryType = UITableViewCellAccessoryNone;
         //cell.selectionStyle = UITableViewCellSelectionStyleGray;
     } else {
@@ -89,16 +90,16 @@
 }
 
 - (void) tableView:(UITableView *)tv didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    //if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [tv deselectRowAtIndexPath:indexPath animated:YES];
-    }
+    //}
 	
 	int section = indexPath.section, row = indexPath.row;
 	
     
     NSArray *tags = [[data objectAtIndex:section] objectForKey:@"tags"];
     NSArray *urls = nil;
-    UIViewController <SubstitutableDetailViewController> *vc = nil;
+    UIViewController *vc = nil;
     if(tags != nil) {
         int tag = [[tags objectAtIndex:row] integerValue];
         switch (tag) {
@@ -129,12 +130,12 @@
                         break;
                 }
                 if(vc != nil) {
-                    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                    /*if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
                         DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
                         detailViewManager.detailViewController = vc;
-                    } else {
+                    } else {*/
                         [self.navigationController pushViewController:vc animated:YES];
-                    }
+                    //}
                 }
                 break;
         }
@@ -266,13 +267,13 @@
 
 - (void) openInAppBrowser:(NSString*) url {
     TSMiniWebBrowser *webBrowser = [[TSMiniWebBrowser alloc] initWithUrl:[NSURL URLWithString:url]];
-    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    /*if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         webBrowser.mode = TSMiniWebBrowserModeModal;
         [self presentViewController:webBrowser animated:YES completion:NULL];
-    } else {
+    } else {*/
         webBrowser.mode = TSMiniWebBrowserModeNavigation;
         [self.navigationController pushViewController:webBrowser animated:YES];
-    }
+    //}
 }
 
 - (void) showLoginPopup {

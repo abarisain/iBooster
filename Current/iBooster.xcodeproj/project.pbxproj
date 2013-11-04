@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		5126EB871619CB5900C09577 /* UIWebView+boosterTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5126EB841619CB5900C09577 /* UIWebView+boosterTools.m */; };
 		5126EB881619CB5900C09577 /* UIWebView+injectJS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5126EB861619CB5900C09577 /* UIWebView+injectJS.m */; };
-		5161F54C1614510C001F2914 /* DetailViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5161F54A1614510C001F2914 /* DetailViewManager.m */; };
-		5161F54D1614510C001F2914 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5161F54B1614510C001F2914 /* MainWindow.xib */; };
-		5161F55216145412001F2914 /* DetailPlaceholderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5161F55116145412001F2914 /* DetailPlaceholderViewController.m */; };
-		5161F5551614567F001F2914 /* LoadingTableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5161F5531614567F001F2914 /* LoadingTableViewController~ipad.xib */; };
 		5161F5631614908B001F2914 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5161F5621614908B001F2914 /* QuartzCore.framework */; };
 		51762CFE161B2898001B767E /* SummaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51762CFD161B2898001B767E /* SummaryController.m */; };
 		51762D02161B290D001B767E /* Summary.m in Sources */ = {isa = PBXBuildFile; fileRef = 51762D01161B290D001B767E /* Summary.m */; };
@@ -40,7 +36,6 @@
 		51D154CC160DE5B600524550 /* iBoosterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D154CB160DE5B600524550 /* iBoosterTests.m */; };
 		51D154DA160DE9D500524550 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D154D8160DE9D500524550 /* LoginViewController.m */; };
 		51D359EC1615EFC000861463 /* PlanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D359EA1615EFC000861463 /* PlanningViewController.xib */; };
-		51D35A101615F39700861463 /* PlanningViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D35A0E1615F39700861463 /* PlanningViewController~ipad.xib */; };
 		51DF812B1619BA1700F950E5 /* MarksFooterTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81201619BA1700F950E5 /* MarksFooterTableCell.m */; };
 		51DF812D1619BA1700F950E5 /* MarksHeaderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81231619BA1700F950E5 /* MarksHeaderTableCell.m */; };
 		51DF812F1619BA1700F950E5 /* MarksScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81261619BA1700F950E5 /* MarksScrollingHeaderView.m */; };
@@ -74,7 +69,6 @@
 		51DF81821619BA8200F950E5 /* TSMiniWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81671619BA8200F950E5 /* TSMiniWebBrowser.m */; };
 		51DF81831619BA8200F950E5 /* TSMiniWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81681619BA8200F950E5 /* TSMiniWebBrowser.xib */; };
 		51DF81861619BA8F00F950E5 /* PlanningEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81851619BA8F00F950E5 /* PlanningEvent.m */; };
-		51DF81891619BAE600F950E5 /* DetailPlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81871619BAE600F950E5 /* DetailPlaceholderView.xib */; };
 		51DF818E1619BB0200F950E5 /* MarksController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF818B1619BB0200F950E5 /* MarksController.m */; };
 		51DF818F1619BB0200F950E5 /* PlanningController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF818D1619BB0200F950E5 /* PlanningController.m */; };
 		51DF819F1619BB5200F950E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81981619BB5200F950E5 /* Default-568h@2x.png */; };
@@ -108,12 +102,6 @@
 		5126EB841619CB5900C09577 /* UIWebView+boosterTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+boosterTools.m"; path = "Categories/UIWebView+boosterTools.m"; sourceTree = "<group>"; };
 		5126EB851619CB5900C09577 /* UIWebView+injectJS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+injectJS.h"; path = "Categories/UIWebView+injectJS.h"; sourceTree = "<group>"; };
 		5126EB861619CB5900C09577 /* UIWebView+injectJS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+injectJS.m"; path = "Categories/UIWebView+injectJS.m"; sourceTree = "<group>"; };
-		5161F5491614510C001F2914 /* DetailViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewManager.h; path = iBooster/iPad/DetailViewManager.h; sourceTree = "<group>"; };
-		5161F54A1614510C001F2914 /* DetailViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewManager.m; path = iBooster/iPad/DetailViewManager.m; sourceTree = "<group>"; };
-		5161F54B1614510C001F2914 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindow.xib; path = iBooster/iPad/MainWindow.xib; sourceTree = "<group>"; };
-		5161F55016145412001F2914 /* DetailPlaceholderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPlaceholderViewController.h; path = iBooster/iPad/DetailPlaceholderViewController.h; sourceTree = "<group>"; };
-		5161F55116145412001F2914 /* DetailPlaceholderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailPlaceholderViewController.m; path = iBooster/iPad/DetailPlaceholderViewController.m; sourceTree = "<group>"; };
-		5161F5541614567F001F2914 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iBooster/en.lproj/LoadingTableViewController~ipad.xib"; sourceTree = "<group>"; };
 		5161F5621614908B001F2914 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5161F56916151D8C001F2914 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		51762CFC161B2898001B767E /* SummaryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SummaryController.h; path = "iBooster/Content Controllers/SummaryController.h"; sourceTree = "<group>"; };
@@ -150,7 +138,6 @@
 		51D154D7160DE9D500524550 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		51D154D8160DE9D500524550 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		51D359EB1615EFC000861463 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/PlanningViewController.xib; sourceTree = "<group>"; };
-		51D35A0F1615F39700861463 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iBooster/en.lproj/PlanningViewController~ipad.xib"; sourceTree = "<group>"; };
 		51DF811F1619BA1700F950E5 /* MarksFooterTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarksFooterTableCell.h; path = "iBooster/Table cells/Marks/MarksFooterTableCell.h"; sourceTree = "<group>"; };
 		51DF81201619BA1700F950E5 /* MarksFooterTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarksFooterTableCell.m; path = "iBooster/Table cells/Marks/MarksFooterTableCell.m"; sourceTree = "<group>"; };
 		51DF81221619BA1700F950E5 /* MarksHeaderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarksHeaderTableCell.h; path = "iBooster/Table cells/Marks/MarksHeaderTableCell.h"; sourceTree = "<group>"; };
@@ -205,7 +192,6 @@
 		51DF81681619BA8200F950E5 /* TSMiniWebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSMiniWebBrowser.xib; sourceTree = "<group>"; };
 		51DF81841619BA8F00F950E5 /* PlanningEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanningEvent.h; path = iBooster/Models/PlanningEvent.h; sourceTree = "<group>"; };
 		51DF81851619BA8F00F950E5 /* PlanningEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlanningEvent.m; path = iBooster/Models/PlanningEvent.m; sourceTree = "<group>"; };
-		51DF81881619BAE600F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/DetailPlaceholderView.xib; sourceTree = "<group>"; };
 		51DF818A1619BB0200F950E5 /* MarksController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarksController.h; path = "iBooster/Content Controllers/MarksController.h"; sourceTree = "<group>"; };
 		51DF818B1619BB0200F950E5 /* MarksController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarksController.m; path = "iBooster/Content Controllers/MarksController.m"; sourceTree = "<group>"; };
 		51DF818C1619BB0200F950E5 /* PlanningController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlanningController.h; path = "iBooster/Content Controllers/PlanningController.h"; sourceTree = "<group>"; };
@@ -274,20 +260,6 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		5161F54816145103001F2914 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				5161F5491614510C001F2914 /* DetailViewManager.h */,
-				5161F54A1614510C001F2914 /* DetailViewManager.m */,
-				5161F54B1614510C001F2914 /* MainWindow.xib */,
-				5161F55016145412001F2914 /* DetailPlaceholderViewController.h */,
-				5161F55116145412001F2914 /* DetailPlaceholderViewController.m */,
-				51DF81871619BAE600F950E5 /* DetailPlaceholderView.xib */,
-			);
-			name = iPad;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		51762D03161B2BAF001B767E /* Summary */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,7 +276,6 @@
 				51DF81AD1619BBB300F950E5 /* LoadingTableViewController.h */,
 				51DF81AE1619BBB300F950E5 /* LoadingTableViewController.m */,
 				51B75CB016121ED200ABCAB6 /* LoadingTableViewController.xib */,
-				5161F5531614567F001F2914 /* LoadingTableViewController~ipad.xib */,
 			);
 			name = "Abstract Controllers";
 			path = ..;
@@ -318,7 +289,6 @@
 				51DF818C1619BB0200F950E5 /* PlanningController.h */,
 				51DF818D1619BB0200F950E5 /* PlanningController.m */,
 				51D359EA1615EFC000861463 /* PlanningViewController.xib */,
-				51D35A0E1615F39700861463 /* PlanningViewController~ipad.xib */,
 				51762CFC161B2898001B767E /* SummaryController.h */,
 				51762CFD161B2898001B767E /* SummaryController.m */,
 			);
@@ -414,7 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				51DF81361619BA8200F950E5 /* Libraries */,
-				5161F54816145103001F2914 /* iPad */,
 				51B75CD2161390B700ABCAB6 /* Images */,
 				5119C7DE160F6E4200D4CF10 /* Categories */,
 				5119C7C7160F44EF00D4CF10 /* Javascript */,
@@ -643,7 +612,7 @@
 		51D15481160DE5B500524550 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Arnaud Barisain Monrose";
 			};
 			buildConfigurationList = 51D15484160DE5B500524550 /* Build configuration list for PBXProject "iBooster" */;
@@ -678,10 +647,7 @@
 				51B75D021613A51000ABCAB6 /* icon-ipad@2x.png in Resources */,
 				51B75D031613A51000ABCAB6 /* icon.png in Resources */,
 				51B75D041613A51000ABCAB6 /* icon@2x.png in Resources */,
-				5161F54D1614510C001F2914 /* MainWindow.xib in Resources */,
-				5161F5551614567F001F2914 /* LoadingTableViewController~ipad.xib in Resources */,
 				51D359EC1615EFC000861463 /* PlanningViewController.xib in Resources */,
-				51D35A101615F39700861463 /* PlanningViewController~ipad.xib in Resources */,
 				51DF816E1619BA8200F950E5 /* ma_leftArrow.png in Resources */,
 				51DF816F1619BA8200F950E5 /* ma_leftArrow@2x.png in Resources */,
 				51DF81701619BA8200F950E5 /* ma_rightArrow.png in Resources */,
@@ -694,7 +660,6 @@
 				51DF81801619BA8200F950E5 /* reload_icon.png in Resources */,
 				51DF81811619BA8200F950E5 /* reload_icon@2x.png in Resources */,
 				51DF81831619BA8200F950E5 /* TSMiniWebBrowser.xib in Resources */,
-				51DF81891619BAE600F950E5 /* DetailPlaceholderView.xib in Resources */,
 				51DF819F1619BB5200F950E5 /* Default-568h@2x.png in Resources */,
 				51DF81A01619BB5200F950E5 /* Default-Landscape@2x~ipad.png in Resources */,
 				51DF81A11619BB5200F950E5 /* Default-Landscape~ipad.png in Resources */,
@@ -747,8 +712,6 @@
 				51D1549F160DE5B500524550 /* AppDelegate.m in Sources */,
 				51D154A8160DE5B500524550 /* MenuViewController.m in Sources */,
 				51D154DA160DE9D500524550 /* LoginViewController.m in Sources */,
-				5161F54C1614510C001F2914 /* DetailViewManager.m in Sources */,
-				5161F55216145412001F2914 /* DetailPlaceholderViewController.m in Sources */,
 				51DF812B1619BA1700F950E5 /* MarksFooterTableCell.m in Sources */,
 				51DF812D1619BA1700F950E5 /* MarksHeaderTableCell.m in Sources */,
 				51DF812F1619BA1700F950E5 /* MarksScrollingHeaderView.m in Sources */,
@@ -800,14 +763,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5161F5531614567F001F2914 /* LoadingTableViewController~ipad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5161F5541614567F001F2914 /* en */,
-			);
-			name = "LoadingTableViewController~ipad.xib";
-			sourceTree = "<group>";
-		};
 		51762D07161B2C2A001B767E /* SummaryTableCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -855,22 +810,6 @@
 				51D359EB1615EFC000861463 /* en */,
 			);
 			name = PlanningViewController.xib;
-			sourceTree = "<group>";
-		};
-		51D35A0E1615F39700861463 /* PlanningViewController~ipad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51D35A0F1615F39700861463 /* en */,
-			);
-			name = "PlanningViewController~ipad.xib";
-			sourceTree = "<group>";
-		};
-		51DF81871619BAE600F950E5 /* DetailPlaceholderView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51DF81881619BAE600F950E5 /* en */,
-			);
-			name = DetailPlaceholderView.xib;
 			sourceTree = "<group>";
 		};
 		51DF81AA1619BB8100F950E5 /* MarksWindowHeader.xib */ = {
@@ -928,7 +867,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -948,6 +886,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -959,7 +898,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;

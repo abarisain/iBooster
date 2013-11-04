@@ -40,20 +40,10 @@
     NSString *userAgent;
     // Override point for customization after application launch.
     MenuViewController *menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:menuViewController];
-        self.window.rootViewController = self.navigationController;
-        userAgent = IPHONE_USER_AGENT;
-    } else {
-        // The new popover look for split views was added in iOS 5.1.
-        // This checks if the setting to enable it is available and
-        // sets it to YES if so.
-        if ([self.splitViewController respondsToSelector:@selector(setPresentsWithGesture:)])
-            [self.splitViewController setPresentsWithGesture:YES];
-        
-        self.window.rootViewController = self.splitViewController;
-        userAgent = IPAD_USER_AGENT;
-    }
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:menuViewController];
+    self.window.rootViewController = self.navigationController;
+    userAgent = IPHONE_USER_AGENT;
     
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:userAgent, @"UserAgent", nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
