@@ -248,6 +248,8 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 	
 	self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds),
 											 CGRectGetHeight(self.allDayEventView.bounds) + CGRectGetHeight(self.hourView.bounds) + VIEW_EMPTY_SPACE);
+    // Autoscroll to 8am
+    [self.scrollView scrollRectToVisible:CGRectMake(0, 285.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
 	
 	self.gridView.frame = CGRectMake(CGRectGetMaxX(self.hourView.bounds),
 									 CGRectGetMaxY(self.allDayEventView.bounds),
