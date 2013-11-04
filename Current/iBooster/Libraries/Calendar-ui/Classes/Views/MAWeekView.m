@@ -33,7 +33,7 @@
 #import "TapDetectingView.h"      /* TapDetectingView */
 
 static const unsigned int HOURS_IN_DAY                        = 24;
-static const unsigned int DAYS_IN_WEEK                        = 7;
+static const unsigned int DAYS_IN_WEEK                        = 5;
 static const unsigned int MINUTES_IN_HOUR                     = 60;
 static const unsigned int SPACE_BETWEEN_HOUR_LABELS           = 3;
 static const unsigned int SPACE_BETWEEN_HOUR_LABELS_LANDSCAPE = 2;
@@ -180,7 +180,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 	self.eventDraggingEnabled = YES;
 	self.week = [NSDate date];
     
-	[self addSubview:self.topBackground];
+	//[self addSubview:self.topBackground];
 	[self addSubview:self.leftArrow];
 	[self addSubview:self.rightArrow];
 	[self addSubview:self.dateLabel];
@@ -617,8 +617,12 @@ static NSString const * const HOURS_24[] = {
 	_weekdays = [[NSMutableArray alloc] init];
 	
 	for (register unsigned int i=0; i < DAYS_IN_WEEK; i++) {
-		[_weekdays addObject:date];
 		components = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:date];
+        if([components weekday] != 1)
+        {
+            i--;
+            [_weekdays addObject:date];
+        }
 		[components setDay:1];
 		date = [CURRENT_CALENDAR dateByAddingComponents:components2 toDate:date options:0];
 	}
@@ -638,7 +642,7 @@ static NSString const * const HOURS_24[] = {
 	
 	NSArray *weekdaySymbols = [self.dateFormatter veryShortWeekdaySymbols];
 	CFCalendarRef currentCalendar = CFCalendarCopyCurrent();
-	int d = CFCalendarGetFirstWeekday(currentCalendar) - 1;
+	int d = 1;
 	CFRelease(currentCalendar);
 	
 	for (NSDate *date in _weekdays) {
@@ -766,7 +770,7 @@ static NSString const * const HOURS_24[] = {
 @end
 
 static const CGFloat kAlpha        = 0.9;
-static const CGFloat kCornerRadius = 8.0;
+static const CGFloat kCornerRadius = 0.0;
 static const CGFloat kCorner       = 5.0;
 
 @implementation MAEventView

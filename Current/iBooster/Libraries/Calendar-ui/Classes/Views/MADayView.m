@@ -151,7 +151,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
 	self.labelFontSize = DEFAULT_LABEL_FONT_SIZE;
 	self.day = [NSDate date];
 	
-	[self addSubview:self.topBackground];
+	//[self addSubview:self.topBackground];
 	[self addSubview:self.leftArrow];
 	[self addSubview:self.rightArrow];
 	[self addSubview:self.dateLabel];
@@ -407,7 +407,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
 @end
 
 static const CGFloat kAlpha        = 0.8;
-static const CGFloat kCornerRadius = 10.0;
+static const CGFloat kCornerRadius = 0.0;
 static const CGFloat kCorner       = 5.0;
 
 @implementation MADayEventView
