@@ -75,7 +75,7 @@
     if ( webView.loading ) {
         [webView stopLoading];
     }
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     
     // Notify the delegate
     if (self.delegate != NULL && [self.delegate respondsToSelector:@selector(tsMiniWebBrowserDidDismiss)]) {
@@ -183,6 +183,7 @@
     webView.scalesPageToFit = YES;
     
     webView.delegate = self;
+    webView.scrollView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0);
     
     // Load the URL in the webView
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:urlToLoad];

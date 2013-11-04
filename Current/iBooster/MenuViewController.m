@@ -216,7 +216,7 @@
 
 - (void) checkLoggedIn {
     [internalWebView injectToolkit];
-    if([internalWebView isLoggedIn]) {
+    if(false && [internalWebView isLoggedIn]) {
         [self userDidLogin];
     } else {
         [self showLoginPopup];
@@ -277,7 +277,8 @@
 
 - (void) showLoginPopup {
     LoginViewController *loginController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self presentViewController:loginController animated:YES completion:NULL];
+    loginController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [[self navigationController] pushViewController:loginController animated:YES];
 }
 
 - (void) logout {

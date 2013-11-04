@@ -128,7 +128,7 @@
 		51B75CFE1613A51000ABCAB6 /* icon-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-ipad@2x.png"; path = "iBooster/Images/icon-ipad@2x.png"; sourceTree = "<group>"; };
 		51B75CFF1613A51000ABCAB6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = iBooster/Images/icon.png; sourceTree = "<group>"; };
 		51B75D001613A51000ABCAB6 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "iBooster/Images/icon@2x.png"; sourceTree = "<group>"; };
-		51D1548A160DE5B500524550 /* iBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D1548A160DE5B500524550 /* dBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D1548E160DE5B500524550 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		51D15490160DE5B500524550 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		51D15492160DE5B500524550 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,7 +141,7 @@
 		51D154A6160DE5B500524550 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		51D154A7160DE5B500524550 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		51D154AD160DE5B500524550 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MenuViewController.xib; sourceTree = "<group>"; };
-		51D154BD160DE5B600524550 /* iBoosterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBoosterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D154BD160DE5B600524550 /* iBoosterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = iBoosterTests.octest; path = dBoosterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D154BE160DE5B600524550 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		51D154C6160DE5B600524550 /* iBoosterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBoosterTests-Info.plist"; sourceTree = "<group>"; };
 		51D154C8160DE5B600524550 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -391,7 +391,7 @@
 		51D1548B160DE5B500524550 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51D1548A160DE5B500524550 /* iBooster.app */,
+				51D1548A160DE5B500524550 /* dBooster.app */,
 				51D154BD160DE5B600524550 /* iBoosterTests.octest */,
 			);
 			name = Products;
@@ -615,7 +615,7 @@
 			);
 			name = dBooster;
 			productName = iBooster;
-			productReference = 51D1548A160DE5B500524550 /* iBooster.app */;
+			productReference = 51D1548A160DE5B500524550 /* dBooster.app */;
 			productType = "com.apple.product-type.application";
 		};
 		51D154BC160DE5B600524550 /* dBoosterTests */ = {
@@ -989,7 +989,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBooster/iBooster-Prefix.pch";
 				INFOPLIST_FILE = "iBooster/iBooster-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1001,7 +1001,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBooster/iBooster-Prefix.pch";
 				INFOPLIST_FILE = "iBooster/iBooster-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

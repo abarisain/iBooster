@@ -37,8 +37,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.067 green:0.067 blue:0.067 alpha:1]];
     NSString *userAgent;
     // Override point for customization after application launch.
     MenuViewController *menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];

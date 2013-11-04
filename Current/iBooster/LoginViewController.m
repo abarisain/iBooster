@@ -51,6 +51,8 @@
     [[self webView] loadRequest:requestObj];
     [[self webView] setDelegate:self];
     [self showLoginAlertMessage];
+    self.navigationItem.title = @"Se connecter";
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)showLoginAlertMessage {
@@ -61,7 +63,6 @@
                                             otherButtonTitles:nil];
     [message show];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -98,7 +99,7 @@
             [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:[NSHTTPCookie cookieWithProperties:cookiePropertiesClone]];
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:USER_LOGIN_NOTIFICATION object:nil];
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        [[self navigationController] popViewControllerAnimated:YES];
     }
 }
 
