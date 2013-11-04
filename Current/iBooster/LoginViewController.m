@@ -43,7 +43,7 @@
 {
     [super viewDidLoad];
 
-    NSString *urlAddress = @"http://www.campus-booster.net/Booster/students/labs.aspx";
+    NSString *urlAddress = @"http://www.campus-booster.net/Booster/students/licensing.aspx";
     
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
