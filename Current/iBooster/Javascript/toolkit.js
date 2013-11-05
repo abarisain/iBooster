@@ -42,8 +42,6 @@ iBoosterToolkit.parseMarksLevels = function () {
 
 iBoosterToolkit.selectMarkLevel = function (id) {
     $("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li")[id].onclick();
-    console.debug($("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC"));
-        console.debug($("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li"));
     return {};
 }
 
