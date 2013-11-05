@@ -55,12 +55,34 @@
 {
     [super viewDidLoad];
 	[self getNavigationItem].titleView = segmentedViewSelector;
+    [self getNavigationBar].shadowImage = [[UIImage alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    CGRect weekFrame = weekView.frame;
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(orientation))
+    {
+        [weekView setFrame:CGRectMake(weekFrame.origin.x, weekFrame.origin.y, segmentedViewSelector.frame.size.width, 30)];
+        [segmentedViewSelector setFrame:CGRectMake(segmentedViewSelector.frame.origin.x, segmentedViewSelector.frame.origin.y, segmentedViewSelector.frame.size.width, 30)];
+    }
+    else
+    {
+        [segmentedViewSelector setFrame:CGRectMake(segmentedViewSelector.frame.origin.x, segmentedViewSelector.frame.origin.y, segmentedViewSelector.frame.size.width, 25)];
+        
+    }
+    
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self updateViewsForOrientation:toInterfaceOrientation];
 }
 
 #pragma mark Abstract Methods implementation

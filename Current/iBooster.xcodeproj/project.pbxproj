@@ -75,6 +75,7 @@
 		51DF81BB1619BC0F00F950E5 /* MarksTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81B61619BC0F00F950E5 /* MarksTableCell.xib */; };
 		51DF81BE1619BC5100F950E5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81BC1619BC5000F950E5 /* LoginViewController.xib */; };
 		51EFFA661828D7D400CFE5BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EFFA651828D7D400CFE5BC /* Images.xcassets */; };
+		51EFFA6A1829093300CFE5BC /* AMBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51EFFA691829093300CFE5BC /* AMBlurView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,8 @@
 		51DF81B71619BC0F00F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/MarksTableCell.xib; sourceTree = "<group>"; };
 		51DF81BD1619BC5000F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LoginViewController.xib; sourceTree = "<group>"; };
 		51EFFA651828D7D400CFE5BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = dBooster/Images.xcassets; sourceTree = "<group>"; };
+		51EFFA681829093300CFE5BC /* AMBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMBlurView.h; sourceTree = "<group>"; };
+		51EFFA691829093300CFE5BC /* AMBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMBlurView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +430,7 @@
 		51DF81361619BA8200F950E5 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				51EFFA671829093300CFE5BC /* AMBlurView */,
 				51DF81371619BA8200F950E5 /* Calendar-ui */,
 				51DF814A1619BA8200F950E5 /* CMPopTipView */,
 				51DF814D1619BA8200F950E5 /* iCalObjCSDK */,
@@ -535,6 +539,15 @@
 				51DF81651619BA8200F950E5 /* reload_icon@2x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		51EFFA671829093300CFE5BC /* AMBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				51EFFA681829093300CFE5BC /* AMBlurView.h */,
+				51EFFA691829093300CFE5BC /* AMBlurView.m */,
+			);
+			path = AMBlurView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -681,6 +694,7 @@
 				51DF816A1619BA8200F950E5 /* MAEvent.m in Sources */,
 				51DF816B1619BA8200F950E5 /* MAGridView.m in Sources */,
 				51DF816C1619BA8200F950E5 /* MAWeekView.m in Sources */,
+				51EFFA6A1829093300CFE5BC /* AMBlurView.m in Sources */,
 				51DF816D1619BA8200F950E5 /* TapDetectingView.m in Sources */,
 				51DF81731619BA8200F950E5 /* CMPopTipView.m in Sources */,
 				51DF81741619BA8200F950E5 /* CGICalendar.m in Sources */,

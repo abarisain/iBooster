@@ -26,6 +26,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "AMBlurView.h"
 
 @class MAGridView;
 @class MAHourView;
@@ -36,7 +37,7 @@
 @protocol MAWeekViewDataSource, MAWeekViewDelegate;
 
 @interface MAWeekView : UIView {
-	UIImageView *_topBackground;
+	AMBlurView *_topBackground;
 	UIButton *_leftArrow, *_rightArrow;
 	UILabel *_dateLabel;
 	

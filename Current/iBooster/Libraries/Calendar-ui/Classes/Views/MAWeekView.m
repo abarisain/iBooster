@@ -49,7 +49,7 @@ static const unsigned int ARROW_LEFT                          = 0;
 static const unsigned int ARROW_RIGHT                         = 1;
 static const unsigned int ARROW_WIDTH                         = 48;
 static const unsigned int ARROW_HEIGHT                        = 38;
-static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
+static const unsigned int TOP_BACKGROUND_HEIGHT               = 36;
 
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
@@ -140,7 +140,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 - (NSDate *)previousWeekFromDate:(NSDate *)date;
 - (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
 
-@property (readonly) UIImageView *topBackground;
+@property (readonly) AMBlurView *topBackground;
 @property (readonly) UIButton *leftArrow;
 @property (readonly) UIButton *rightArrow;
 @property (readonly) UILabel *dateLabel;
@@ -180,13 +180,13 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 	self.eventDraggingEnabled = YES;
 	self.week = [NSDate date];
     
-	//[self addSubview:self.topBackground];
+    [self addSubview:self.scrollView];
+	[self addSubview:self.topBackground];
 	[self addSubview:self.leftArrow];
 	[self addSubview:self.rightArrow];
 	[self addSubview:self.dateLabel];
 	[self addSubview:self.weekdayBarView];
 	
-	[self addSubview:self.scrollView];
 	
 	[self.scrollView addSubview:self.allDayEventView];
 	[self.scrollView addSubview:self.hourView];
@@ -201,20 +201,20 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 	const CGSize sizeNecessaryBold = [TEXT_WHICH_MUST_FIT sizeWithFont:self.boldFont];
     
     self.topBackground.frame = CGRectMake(CGRectGetMinX(self.bounds),
-										  CGRectGetMinY(self.bounds),
+										  CGRectGetMinY(self.bounds)+64,
 										  CGRectGetWidth(self.bounds), TOP_BACKGROUND_HEIGHT + 10);
 	
-	self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.bounds),
-								  CGRectGetMinY(self.topBackground.bounds),
+	self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.frame),
+								  CGRectGetMinY(self.topBackground.frame),
 									  ARROW_WIDTH, ARROW_HEIGHT);
 	
-	self.rightArrow.frame = CGRectMake(CGRectGetWidth(self.topBackground.bounds) - ARROW_WIDTH,
-									CGRectGetMinY(self.topBackground.bounds),
+	self.rightArrow.frame = CGRectMake(CGRectGetWidth(self.topBackground.frame) - ARROW_WIDTH,
+									CGRectGetMinY(self.topBackground.frame),
 									ARROW_WIDTH, ARROW_HEIGHT);
 	
-	self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.leftArrow.bounds),
-									  CGRectGetMinY(self.topBackground.bounds),
-									  CGRectGetWidth(self.topBackground.bounds) - CGRectGetWidth(self.leftArrow.bounds) - CGRectGetWidth(self.rightArrow.bounds),
+	self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.leftArrow.frame),
+									  CGRectGetMinY(self.topBackground.frame),
+									  CGRectGetWidth(self.topBackground.frame) - CGRectGetWidth(self.leftArrow.frame) - CGRectGetWidth(self.rightArrow.frame),
 									  ARROW_HEIGHT);
 	
 	self.allDayEventView.frame = CGRectMake(sizeNecessary.width, 0,
@@ -229,26 +229,27 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 	}
 	
 	self.hourView.frame = CGRectMake(CGRectGetMinX(self.allDayEventView.bounds),
-									 CGRectGetMaxY(self.allDayEventView.bounds), 
+									 CGRectGetMaxY(self.allDayEventView.bounds),
 									 sizeNecessary.width,
 									 sizeNecessary.height * HOURS_IN_DAY * hourLabelSpacer);
 	
 	[self.hourView setNeedsDisplay];
 	
 	self.weekdayBarView.frame = CGRectMake(CGRectGetMaxX(self.hourView.bounds),
-										CGRectGetMaxY(self.topBackground.bounds) - sizeNecessaryBold.height, 
-										CGRectGetWidth(self.topBackground.bounds) - CGRectGetWidth(self.hourView.bounds),
+										CGRectGetMaxY(self.topBackground.frame) - sizeNecessaryBold.height,
+										CGRectGetWidth(self.topBackground.frame) - CGRectGetWidth(self.hourView.bounds),
 										sizeNecessaryBold.height);
 	[self.weekdayBarView setNeedsDisplay];
 	
 	self.scrollView.frame = CGRectMake(CGRectGetMinX(self.bounds),
-									   CGRectGetMaxY(self.topBackground.bounds),
+									   CGRectGetMinY(self.bounds),
 									   CGRectGetWidth(self.bounds),
-									   CGRectGetHeight(self.bounds) - CGRectGetHeight(self.topBackground.bounds));
+									   CGRectGetHeight(self.bounds));
 	
 	self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds),
 											 CGRectGetHeight(self.allDayEventView.bounds) + CGRectGetHeight(self.hourView.bounds) + VIEW_EMPTY_SPACE);
     // Autoscroll to 8am
+    [self.scrollView setContentInset:UIEdgeInsetsMake(CGRectGetMaxY(self.topBackground.frame), 0, 0, 0)];
     [self.scrollView scrollRectToVisible:CGRectMake(0, 285.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
 	
 	self.gridView.frame = CGRectMake(CGRectGetMaxX(self.hourView.bounds),
@@ -260,7 +261,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 35;
 
 - (UIImageView *)topBackground {
 	if (!_topBackground) {
-		_topBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:TOP_BACKGROUND_IMAGE]];
+		_topBackground = [AMBlurView new];
 	}
 	return _topBackground;
 }
