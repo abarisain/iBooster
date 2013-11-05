@@ -62,7 +62,7 @@
     popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     for(NSDictionary *level in levelsArray)
     {
-        [popupQuery addButtonWithTitle:[[level objectForKey:@"name"] stringByReplacingOccurrencesOfString:@"WorldWide" withString:@""]];
+        [popupQuery addButtonWithTitle:[[level objectForKey:@"name"] stringByReplacingOccurrencesOfString:@"WorldWide " withString:@""]];
     }
     [popupQuery addButtonWithTitle:@"Annuler"];
     [popupQuery setCancelButtonIndex:[levelsArray count]];
