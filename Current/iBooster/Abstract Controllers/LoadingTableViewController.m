@@ -186,7 +186,6 @@
 #pragma mark Abstract Methods to override
 
 - (void)applyUITableViewTheme {
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.922 green:0.922 blue:0.922 alpha:1];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
