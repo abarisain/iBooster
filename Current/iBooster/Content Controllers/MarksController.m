@@ -46,9 +46,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Année" style:UIBarButtonItemStylePlain
-                                                                     target:self action:@selector(test)];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+    yearBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Année" style:UIBarButtonItemStylePlain
+                                                                     target:self action:@selector(selectYear)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,14 +56,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)test
+- (void)selectYear
 {
-    [self refreshMarksWithId:3];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Sélectionnez une année" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    for(NSDictionary *level in levelsArray)
+    {
+        [popupQuery addButtonWithTitle:[[level objectForKey:@"name"] stringByReplacingOccurrencesOfString:@"WorldWide" withString:@""]];
+    }
+    [popupQuery addButtonWithTitle:@"Annuler"];
+    [popupQuery setCancelButtonIndex:[levelsArray count]];
+    [popupQuery showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex < ([actionSheet numberOfButtons] - 1))
+    {
+        [self refreshMarksWithId:buttonIndex + 1];
+    }
 }
 
 - (void)refreshMarksWithId:(int)yearId
 {
+    tableData = [NSArray new];
+    [[self tableView] reloadData];
     [[self loadingView] setHidden:NO];
+    self.navigationItem.rightBarButtonItem = nil;
     NSDictionary *dict = [self executeToolkitMethod:@"selectMarkLevel" withArguments:[NSString stringWithFormat:@"%d", yearId] onWebView:internalWebView];
     if(dict == nil)
         return;
@@ -77,6 +95,7 @@
     if(dict == nil)
     {
         [[self loadingView] setHidden:YES];
+        self.navigationItem.rightBarButtonItem = yearBarButton;
         NSLog(@"Error while parsing another year's marks");
         return;
     }
@@ -181,6 +200,8 @@
 }
 
 - (void)dataParsed:(NSDictionary*) parsedData {
+    self.navigationItem.rightBarButtonItem = yearBarButton;
+    levelsArray = [parsedData objectForKey:@"levels"];
     NSArray *subjectsToParse = [parsedData objectForKey:@"subjects"];
     if(subjectsToParse == nil) {
         NSLog(@"Error while parsing marks JSON : subjects key not found");

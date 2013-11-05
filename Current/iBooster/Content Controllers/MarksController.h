@@ -31,8 +31,9 @@
 #import "MarksTableCell.h"
 #import "MarksScrollingHeaderView.h"
 
-@interface MarksController : LoadingTableViewController {
-
+@interface MarksController : LoadingTableViewController <UIActionSheetDelegate> {
+    UIBarButtonItem* yearBarButton;
+    NSArray* levelsArray;
 }
 
 @end
