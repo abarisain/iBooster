@@ -62,11 +62,13 @@
 @property (readonly) UIScrollView *scrollView;
 @property (readwrite,assign) BOOL eventDraggingEnabled;
 @property (readwrite,assign) unsigned int labelFontSize;
+@property (readwrite,assign) unsigned int topPadding;
 @property (nonatomic,copy) NSDate *week;
 @property (nonatomic,unsafe_unretained) IBOutlet id<MAWeekViewDataSource> dataSource;
 @property (nonatomic,unsafe_unretained) IBOutlet id<MAWeekViewDelegate> delegate;
 
 - (void)reloadData;
+- (void)layoutSubviews;
 
 @end
 

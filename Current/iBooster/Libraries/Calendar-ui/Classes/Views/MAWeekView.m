@@ -201,7 +201,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 36;
 	const CGSize sizeNecessaryBold = [TEXT_WHICH_MUST_FIT sizeWithFont:self.boldFont];
     
     self.topBackground.frame = CGRectMake(CGRectGetMinX(self.bounds),
-										  CGRectGetMinY(self.bounds)+64,
+										  CGRectGetMinY(self.bounds) + [self topPadding],
 										  CGRectGetWidth(self.bounds), TOP_BACKGROUND_HEIGHT + 10);
 	
 	self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.frame),
@@ -248,9 +248,19 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 36;
 	
 	self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds),
 											 CGRectGetHeight(self.allDayEventView.bounds) + CGRectGetHeight(self.hourView.bounds) + VIEW_EMPTY_SPACE);
-    // Autoscroll to 8am
     [self.scrollView setContentInset:UIEdgeInsetsMake(CGRectGetMaxY(self.topBackground.frame), 0, 0, 0)];
-    [self.scrollView scrollRectToVisible:CGRectMake(0, 285.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
+    // Autoscroll to 8am
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        if(UIInterfaceOrientationIsPortrait([[UIDevice currentDevice]orientation]))
+        {
+            [self.scrollView scrollRectToVisible:CGRectMake(0, 175.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
+        }
+        else
+        {
+            [self.scrollView scrollRectToVisible:CGRectMake(0, 90.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
+        }
+    }
 	
 	self.gridView.frame = CGRectMake(CGRectGetMaxX(self.hourView.bounds),
 									 CGRectGetMaxY(self.allDayEventView.bounds),
@@ -259,7 +269,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 36;
     [self.gridView setNeedsDisplay];
 }
 
-- (UIImageView *)topBackground {
+- (AMBlurView *)topBackground {
 	if (!_topBackground) {
 		_topBackground = [AMBlurView new];
 	}
