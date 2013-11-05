@@ -168,14 +168,17 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 36;
 	self.topBackground.frame = CGRectMake(CGRectGetMinX(self.bounds),
 										  CGRectGetMinY(self.bounds) + [self topPadding],
 										  CGRectGetWidth(self.bounds), TOP_BACKGROUND_HEIGHT + 10);
-	self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.frame),
-									  (int) (CGRectGetHeight(self.topBackground.frame) - ARROW_HEIGHT) / 2,
+
+    self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.frame),
+                                      CGRectGetMinY(self.topBackground.frame) + TOP_BACKGROUND_HEIGHT/2 + 5 - ARROW_HEIGHT/2,
 									  ARROW_WIDTH, ARROW_HEIGHT);
-	self.rightArrow.frame = CGRectMake(CGRectGetWidth(self.topBackground.bounds) - ARROW_WIDTH,
-									   (int) (CGRectGetHeight(self.topBackground.frame) - ARROW_HEIGHT) / 2,
-									   ARROW_WIDTH, ARROW_HEIGHT);
-	self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.leftArrow.bounds),
-									  (int) (CGRectGetHeight(self.topBackground.frame) - ARROW_HEIGHT) / 2,
+	
+	self.rightArrow.frame = CGRectMake(CGRectGetWidth(self.topBackground.frame) - ARROW_WIDTH,
+                                       CGRectGetMinY(self.topBackground.frame) + TOP_BACKGROUND_HEIGHT/2 + 5 - ARROW_HEIGHT/2,
+                                       ARROW_WIDTH, ARROW_HEIGHT);
+	
+	self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.leftArrow.frame),
+									  CGRectGetMinY(self.topBackground.frame) + TOP_BACKGROUND_HEIGHT/2 + 5 - ARROW_HEIGHT/2,
 									  CGRectGetWidth(self.topBackground.frame) - CGRectGetWidth(self.leftArrow.frame) - CGRectGetWidth(self.rightArrow.frame),
 									  ARROW_HEIGHT);
 	
