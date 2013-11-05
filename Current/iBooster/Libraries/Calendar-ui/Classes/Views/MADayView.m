@@ -44,7 +44,7 @@ static const unsigned int ARROW_LEFT                     = 0;
 static const unsigned int ARROW_RIGHT                    = 1;
 static const unsigned int ARROW_WIDTH                    = 48;
 static const unsigned int ARROW_HEIGHT                   = 38;
-static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
+static const unsigned int TOP_BACKGROUND_HEIGHT          = 36;
 
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
@@ -113,7 +113,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
 - (NSDate *)previousDayFromDate:(NSDate *)date;
 - (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
 
-@property (readonly) UIImageView *topBackground;
+@property (readonly) AMBlurView *topBackground;
 @property (readonly) UIButton *leftArrow;
 @property (readonly) UIButton *rightArrow;
 @property (readonly) UILabel *dateLabel;
@@ -151,12 +151,11 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
 	self.labelFontSize = DEFAULT_LABEL_FONT_SIZE;
 	self.day = [NSDate date];
 	
-	//[self addSubview:self.topBackground];
+    [self addSubview:self.scrollView];
+	[self addSubview:self.topBackground];
 	[self addSubview:self.leftArrow];
 	[self addSubview:self.rightArrow];
 	[self addSubview:self.dateLabel];
-	
-	[self addSubview:self.scrollView];
 	
 	[self.scrollView addSubview:self.allDayGridView];
 	[self.scrollView addSubview:self.gridView];
@@ -167,17 +166,17 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
 
 - (void)layoutSubviews {
 	self.topBackground.frame = CGRectMake(CGRectGetMinX(self.bounds),
-										  CGRectGetMinY(self.bounds),
+										  CGRectGetMinY(self.bounds) + [self topPadding],
 										  CGRectGetWidth(self.bounds), TOP_BACKGROUND_HEIGHT + 10);
-	self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.bounds),
-									  (int) (CGRectGetHeight(self.topBackground.bounds) - ARROW_HEIGHT) / 2,
+	self.leftArrow.frame = CGRectMake(CGRectGetMinX(self.topBackground.frame),
+									  (int) (CGRectGetHeight(self.topBackground.frame) - ARROW_HEIGHT) / 2,
 									  ARROW_WIDTH, ARROW_HEIGHT);
 	self.rightArrow.frame = CGRectMake(CGRectGetWidth(self.topBackground.bounds) - ARROW_WIDTH,
-									   (int) (CGRectGetHeight(self.topBackground.bounds) - ARROW_HEIGHT) / 2,
+									   (int) (CGRectGetHeight(self.topBackground.frame) - ARROW_HEIGHT) / 2,
 									   ARROW_WIDTH, ARROW_HEIGHT);
 	self.dateLabel.frame = CGRectMake(CGRectGetMaxX(self.leftArrow.bounds),
-									  (int) (CGRectGetHeight(self.topBackground.bounds) - ARROW_HEIGHT) / 2,
-									  CGRectGetWidth(self.topBackground.bounds) - CGRectGetWidth(self.leftArrow.bounds) - CGRectGetWidth(self.rightArrow.bounds),
+									  (int) (CGRectGetHeight(self.topBackground.frame) - ARROW_HEIGHT) / 2,
+									  CGRectGetWidth(self.topBackground.frame) - CGRectGetWidth(self.leftArrow.frame) - CGRectGetWidth(self.rightArrow.frame),
 									  ARROW_HEIGHT);
 	
 	self.allDayGridView.frame = CGRectMake(0, 0, // Top left corner of the scroll view
@@ -189,18 +188,32 @@ static const unsigned int TOP_BACKGROUND_HEIGHT          = 35;
 									 [@"FOO" sizeWithFont:self.boldFont].height * SPACE_BETWEEN_HOUR_LABELS * HOURS_IN_DAY);
 	
 	self.scrollView.frame = CGRectMake(CGRectGetMinX(self.bounds),
-									   CGRectGetMaxY(self.topBackground.bounds),
+									   CGRectGetMinY(self.bounds),
 									   CGRectGetWidth(self.bounds),
-									   CGRectGetHeight(self.bounds) - CGRectGetHeight(self.topBackground.bounds));
+									   CGRectGetHeight(self.bounds));
 	self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.bounds),
 											 CGRectGetHeight(self.allDayGridView.bounds) + CGRectGetHeight(self.gridView.bounds));
+    [self.scrollView setContentInset:UIEdgeInsetsMake(CGRectGetMaxY(self.topBackground.frame), 0, 0, 0)];
+    
+    // Autoscroll to 8am
+    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        if(UIInterfaceOrientationIsPortrait([[UIDevice currentDevice]orientation]))
+        {
+            [self.scrollView scrollRectToVisible:CGRectMake(0, 250.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
+        }
+        else
+        {
+            [self.scrollView scrollRectToVisible:CGRectMake(0, 270.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
+        }
+    }
 	
 	[self.gridView setNeedsDisplay];
 }
 
-- (UIImageView *)topBackground {
+- (AMBlurView *)topBackground {
 	if (!_topBackground) {
-		_topBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:TOP_BACKGROUND_IMAGE]];
+		_topBackground = [AMBlurView new];
 	}
 	return _topBackground;
 }

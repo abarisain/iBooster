@@ -56,6 +56,7 @@
     [super viewDidLoad];
 	[self getNavigationItem].titleView = segmentedViewSelector;
     [self getNavigationBar].shadowImage = [[UIImage alloc] init];
+    [self refreshPaddings];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,25 +65,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)updateViewsForOrientation:(UIInterfaceOrientation)orientation
+- (void)refreshPaddings
 {
-    CGRect weekFrame = weekView.frame;
-    if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(orientation))
-    {
-        [weekView setFrame:CGRectMake(weekFrame.origin.x, weekFrame.origin.y, segmentedViewSelector.frame.size.width, 30)];
-        [segmentedViewSelector setFrame:CGRectMake(segmentedViewSelector.frame.origin.x, segmentedViewSelector.frame.origin.y, segmentedViewSelector.frame.size.width, 30)];
-    }
-    else
-    {
-        [segmentedViewSelector setFrame:CGRectMake(segmentedViewSelector.frame.origin.x, segmentedViewSelector.frame.origin.y, segmentedViewSelector.frame.size.width, 25)];
-        
-    }
-    
+    [weekView setTopPadding:[[self getNavigationBar] frame].size.height + 20];
+    [dayView setTopPadding:[[self getNavigationBar] frame].size.height + 20];
+    [weekView layoutSubviews];
+    [dayView layoutSubviews];
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self updateViewsForOrientation:toInterfaceOrientation];
+    [self refreshPaddings];
 }
 
 #pragma mark Abstract Methods implementation

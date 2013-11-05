@@ -26,6 +26,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "AMBlurView.h"
 
 @class MA_AllDayGridView;
 @class MADayHourView;
@@ -35,7 +36,7 @@
 @protocol MADayViewDataSource, MADayViewDelegate;
 
 @interface MADayView : UIView {
-	UIImageView *_topBackground;
+	AMBlurView *_topBackground;
 	UIButton *_leftArrow, *_rightArrow;
 	UILabel *_dateLabel;
 	
@@ -59,11 +60,13 @@
 
 @property (nonatomic,assign) BOOL autoScrollToFirstEvent;
 @property (readwrite,assign) unsigned int labelFontSize;
+@property (readwrite,assign) unsigned int topPadding;
 @property (nonatomic,copy) NSDate *day;
 @property (nonatomic,unsafe_unretained) IBOutlet id<MADayViewDataSource> dataSource;
 @property (nonatomic,unsafe_unretained) IBOutlet id<MADayViewDelegate> delegate;
 
 - (void)reloadData;
+- (void)layoutSubviews;
 
 @end
 
