@@ -46,6 +46,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Année" style:UIBarButtonItemStylePlain
+                                                                     target:self action:@selector(test)];
+    self.navigationItem.rightBarButtonItem = anotherButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,24 +57,57 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)test
+{
+    [self refreshMarksWithId:3];
+}
+
+- (void)refreshMarksWithId:(int)yearId
+{
+    [[self loadingView] setHidden:NO];
+    NSDictionary *dict = [self executeToolkitMethod:@"selectMarkLevel" withArguments:[NSString stringWithFormat:@"%d", yearId] onWebView:internalWebView];
+    if(dict == nil)
+        return;
+    [self performSelector:@selector(parseRefreshedMarks) withObject:nil afterDelay:1.0 inModes:@[NSRunLoopCommonModes]];
+}
+
+- (void)parseRefreshedMarks
+{
+    NSDictionary *dict = [self executeToolkitMethod:@"parseMarks" withArguments:@"" onWebView:internalWebView];
+    if(dict == nil)
+    {
+        [[self loadingView] setHidden:YES];
+        NSLog(@"Error while parsing another year's marks");
+        return;
+    }
+    if([dict objectForKey:@"error"] != nil || [dict objectForKey:@"loading"] != nil)
+    {
+        // Still not done, but no error. Try again later
+        [self performSelector:@selector(parseRefreshedMarks) withObject:nil afterDelay:1.0 inModes:@[NSRunLoopCommonModes]];
+    }
+    else
+    {
+        [[self loadingView] setHidden:YES];
+        [self dataParsed:dict];
+    }
+}
+
 #pragma mark Table View Methods
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int count = [[[tableData objectAtIndex:section] marks] count];
-    return (count == 0 ? 1 : count) + 2;
+    return (count == 0 ? 1 : count) + 1;
 }
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     static NSString *HeaderCellIdentifier = @"Header";
-    static NSString *FooterCellIdentifier = @"Footer";
     NSArray *nib;
     /* On prépare la condition du if suivent (qui ignore le header, d'ou le +1)
      * On simule une ligne si jamais il n'y en a pas du tout
      * pour pouvoir ecrire "Aucune note"
      */
     Subject* subject = [tableData objectAtIndex:indexPath.section];
-    int footerCount = [[subject marks] count];
-    footerCount = (footerCount == 0 ? 2 : (footerCount+1));
     if(indexPath.row == 0) {
         MarksHeaderTableCell *headerCell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
         if (headerCell == nil) {
@@ -80,13 +116,6 @@
         }
         [headerCell displaySubject:subject];
         return headerCell;
-    } else if (indexPath.row == footerCount) {
-        MarksFooterTableCell *footerCell = [tableView dequeueReusableCellWithIdentifier:FooterCellIdentifier];
-        if (footerCell == nil) {
-            nib = [[NSBundle mainBundle] loadNibNamed:@"MarksFooterTableCell" owner:self options:nil];
-            footerCell = [nib objectAtIndex:0];
-        }
-        return footerCell;
     } else {
         MarksTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {

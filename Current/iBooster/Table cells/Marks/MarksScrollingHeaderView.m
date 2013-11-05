@@ -57,11 +57,9 @@
     creditValue.text = [NSString stringWithFormat:@"%d Crédit%@",
                         subject.credits,
                         (subject.credits > 1 ? @"s" : @"")];
-    self.backgroundColor = [UIColor clearColor];
-    UIColor *color = (subject.validated ?
+    self.backgroundColor = (subject.validated ?
                       [UIColor colorWithRed:0.718 green:0.867 blue:0.694 alpha:1] :
                       [UIColor colorWithRed:0.859 green:0.71 blue:0.718 alpha:1]);
-    ((CAGradientLayer*)self.layer).colors = [NSArray arrayWithObjects:(id)[color CGColor], (id)[[UIColor colorWithRed:0.922 green:0.922 blue:0.922 alpha:0.1] CGColor], nil];
 }
 
 @end

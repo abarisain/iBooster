@@ -69,6 +69,21 @@
     }*/
 }
 
+- (NSDictionary*)executeToolkitMethod:(NSString*)method withArguments:(NSString*)args onWebView:(UIWebView*)webView {
+    NSError *error = nil;
+    NSString *jsResult = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"JSON.stringify(iBoosterToolkit.%@(%@));", method, args]];
+    NSDictionary *dictJSON = [NSJSONSerialization JSONObjectWithData:[jsResult dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
+    
+    if (error) {
+        NSLog(@"JSON parse error: %@\nMethod : %@\nJSON string : %@", [error localizedDescription], method, jsResult);
+        return nil;
+    } else if(DEBUG_ENABLED) {
+        NSLog(@"Method : %@\nJSON string : %@", method, jsResult);
+    }
+    
+    return dictJSON;
+}
+
 #pragma mark -
 #pragma mark SubstitutableDetailViewController
 
@@ -131,18 +146,12 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [[self loadingView] setHidden:YES];
     [webView injectToolkit];
-    NSError *error = nil;
-    NSString *jsResult = [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"JSON.stringify(iBoosterToolkit.%@());", [self getBoosterKitFunctionToExecute]]];
-    NSDictionary *dictJSON = [NSJSONSerialization JSONObjectWithData:[jsResult dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
     
-    if (error) {
-        NSLog(@"JSON parse error: %@\nJSON string : %@", [error localizedDescription], jsResult);
+    NSDictionary *dict = [self executeToolkitMethod:[self getBoosterKitFunctionToExecute] withArguments:@"" onWebView:webView];
+    if(dict == nil)
         return;
-    } else if(DEBUG_ENABLED) {
-        NSLog(@"JSON string : %@", jsResult);
-    }
     
-    [self dataParsed:dictJSON];
+    [self dataParsed:dict];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

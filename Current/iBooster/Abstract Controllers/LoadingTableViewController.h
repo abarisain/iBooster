@@ -32,6 +32,7 @@
     UIWebView *internalWebView;
 }
 
+- (NSDictionary*)executeToolkitMethod:(NSString*)method withArguments:(NSString*)args onWebView:(UIWebView*)webView;
 - (UINavigationBar*) getNavigationBar;
 - (UINavigationItem*) getNavigationItem;
 - (void)applyUITableViewTheme;

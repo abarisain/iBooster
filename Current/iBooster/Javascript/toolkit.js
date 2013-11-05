@@ -20,12 +20,46 @@ iBoosterToolkit.checkIfLoggedIn = function () {
     }
 }
 
-iBoosterToolkit.parseMarks = function () {
-    //console.time("counter");
+iBoosterToolkit.parseMarksLevels = function () {
     var marksContainer = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain");
     if(marksContainer.length == 0) {
         return {"error": true};
     }
+    marksContainer = null;
+    var parsedLevels = [];
+    var i = 1;
+    var levels = $("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li").not(":first").each(function () {
+                                                                                                   var tmpLvl = {};
+                                                                                                   tmpLvl.id = i;
+                                                                                                   tmpLvl.name = $(this).find("b").first()[0].innerHTML;
+                                                                                                   tmpLvl.value = $(this).find("i").first()[0].innerHTML;
+                                                                                                   parsedLevels.push(tmpLvl);
+                                                                                                   i++;
+    });
+    
+    return parsedLevels;
+}
+
+iBoosterToolkit.selectMarkLevel = function (id) {
+    $("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li")[id].onclick();
+    console.debug($("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC"));
+        console.debug($("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li"));
+    return {};
+}
+
+iBoosterToolkit.parseMarks = function () {
+    //console.time("counter");
+    var spinWheelContainer = document.getElementById("ctl00_ContentPlaceHolder1_Lab1_upMain");
+    if(spinWheelContainer.getAttribute("aria-hidden") == "false")
+    {
+        //Not loaded yet
+        return {"error": true, "loading": true};
+    }
+    var marksContainer = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain");
+    if(marksContainer.length == 0) {
+        return {"error": true};
+    }
+    var parsedLevels = iBoosterToolkit.parseMarksLevels();
     marksContainer = null;
     var marks = [];
     var tables = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain").find("table").not(":first").each(function () {
@@ -33,7 +67,7 @@ iBoosterToolkit.parseMarks = function () {
     });
     //console.timeEnd("counter");
     //Meme si on a qu'un tableau, cela permet de parser tres facilement de l'autre coté ...
-    return {"subjects" : marks};
+    return {"subjects" : marks, "levels" : parsedLevels};
 }
 
 iBoosterToolkit.parseMarkTable = function (table) {

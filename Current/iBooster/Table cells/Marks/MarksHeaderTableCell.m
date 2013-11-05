@@ -48,6 +48,9 @@
 
 -(void) displaySubject:(Subject*)subject {
     subjectTitle.text = subject.title;
+    self.backgroundColor = (subject.validated ?
+                            [UIColor colorWithRed:0.718 green:0.867 blue:0.694 alpha:1] :
+                            [UIColor colorWithRed:0.859 green:0.71 blue:0.718 alpha:1]);
 }
 
 @end

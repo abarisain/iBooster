@@ -43,6 +43,5 @@
 @property (weak, nonatomic) IBOutlet MAWeekView *weekView;
 
 - (IBAction)segmentValueChanged:(id)sender;
-- (void)setNavigationBarSeparatorHidden:(BOOL)hidden;
 
 @end

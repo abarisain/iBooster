@@ -29,7 +29,6 @@
 #import "Marks.h"
 #import "MarksHeaderTableCell.h"
 #import "MarksTableCell.h"
-#import "MarksFooterTableCell.h"
 #import "MarksScrollingHeaderView.h"
 
 @interface MarksController : LoadingTableViewController {

@@ -32,7 +32,6 @@
 		51D154CC160DE5B600524550 /* iBoosterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D154CB160DE5B600524550 /* iBoosterTests.m */; };
 		51D154DA160DE9D500524550 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D154D8160DE9D500524550 /* LoginViewController.m */; };
 		51D359EC1615EFC000861463 /* PlanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D359EA1615EFC000861463 /* PlanningViewController.xib */; };
-		51DF812B1619BA1700F950E5 /* MarksFooterTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81201619BA1700F950E5 /* MarksFooterTableCell.m */; };
 		51DF812D1619BA1700F950E5 /* MarksHeaderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81231619BA1700F950E5 /* MarksHeaderTableCell.m */; };
 		51DF812F1619BA1700F950E5 /* MarksScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81261619BA1700F950E5 /* MarksScrollingHeaderView.m */; };
 		51DF81311619BA1700F950E5 /* MarksTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81291619BA1700F950E5 /* MarksTableCell.m */; };
@@ -69,7 +68,6 @@
 		51DF818F1619BB0200F950E5 /* PlanningController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF818D1619BB0200F950E5 /* PlanningController.m */; };
 		51DF81AC1619BB8100F950E5 /* MarksWindowHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81AA1619BB8100F950E5 /* MarksWindowHeader.xib */; };
 		51DF81AF1619BBB300F950E5 /* LoadingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF81AE1619BBB300F950E5 /* LoadingTableViewController.m */; };
-		51DF81B81619BC0F00F950E5 /* MarksFooterTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81B01619BC0F00F950E5 /* MarksFooterTableCell.xib */; };
 		51DF81B91619BC0F00F950E5 /* MarksHeaderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81B21619BC0F00F950E5 /* MarksHeaderTableCell.xib */; };
 		51DF81BA1619BC0F00F950E5 /* MarksScrollingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81B41619BC0F00F950E5 /* MarksScrollingHeaderView.xib */; };
 		51DF81BB1619BC0F00F950E5 /* MarksTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51DF81B61619BC0F00F950E5 /* MarksTableCell.xib */; };
@@ -125,8 +123,6 @@
 		51D154D7160DE9D500524550 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		51D154D8160DE9D500524550 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		51D359EB1615EFC000861463 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/PlanningViewController.xib; sourceTree = "<group>"; };
-		51DF811F1619BA1700F950E5 /* MarksFooterTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarksFooterTableCell.h; path = "iBooster/Table cells/Marks/MarksFooterTableCell.h"; sourceTree = "<group>"; };
-		51DF81201619BA1700F950E5 /* MarksFooterTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarksFooterTableCell.m; path = "iBooster/Table cells/Marks/MarksFooterTableCell.m"; sourceTree = "<group>"; };
 		51DF81221619BA1700F950E5 /* MarksHeaderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarksHeaderTableCell.h; path = "iBooster/Table cells/Marks/MarksHeaderTableCell.h"; sourceTree = "<group>"; };
 		51DF81231619BA1700F950E5 /* MarksHeaderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarksHeaderTableCell.m; path = "iBooster/Table cells/Marks/MarksHeaderTableCell.m"; sourceTree = "<group>"; };
 		51DF81251619BA1700F950E5 /* MarksScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarksScrollingHeaderView.h; path = "iBooster/Table cells/Marks/MarksScrollingHeaderView.h"; sourceTree = "<group>"; };
@@ -188,7 +184,6 @@
 		51DF81AB1619BB8100F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/MarksWindowHeader.xib; sourceTree = "<group>"; };
 		51DF81AD1619BBB300F950E5 /* LoadingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingTableViewController.h; path = "iBooster/Abstract Controllers/LoadingTableViewController.h"; sourceTree = "<group>"; };
 		51DF81AE1619BBB300F950E5 /* LoadingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingTableViewController.m; path = "iBooster/Abstract Controllers/LoadingTableViewController.m"; sourceTree = "<group>"; };
-		51DF81B11619BC0F00F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/MarksFooterTableCell.xib; sourceTree = "<group>"; };
 		51DF81B31619BC0F00F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/MarksHeaderTableCell.xib; sourceTree = "<group>"; };
 		51DF81B51619BC0F00F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/MarksScrollingHeaderView.xib; sourceTree = "<group>"; };
 		51DF81B71619BC0F00F950E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iBooster/en.lproj/MarksTableCell.xib; sourceTree = "<group>"; };
@@ -411,9 +406,6 @@
 		51DF811C1619B9FC00F950E5 /* Marks */ = {
 			isa = PBXGroup;
 			children = (
-				51DF811F1619BA1700F950E5 /* MarksFooterTableCell.h */,
-				51DF81201619BA1700F950E5 /* MarksFooterTableCell.m */,
-				51DF81B01619BC0F00F950E5 /* MarksFooterTableCell.xib */,
 				51DF81221619BA1700F950E5 /* MarksHeaderTableCell.h */,
 				51DF81231619BA1700F950E5 /* MarksHeaderTableCell.m */,
 				51DF81B21619BC0F00F950E5 /* MarksHeaderTableCell.xib */,
@@ -641,7 +633,6 @@
 				51DF81811619BA8200F950E5 /* reload_icon@2x.png in Resources */,
 				51DF81831619BA8200F950E5 /* TSMiniWebBrowser.xib in Resources */,
 				51DF81AC1619BB8100F950E5 /* MarksWindowHeader.xib in Resources */,
-				51DF81B81619BC0F00F950E5 /* MarksFooterTableCell.xib in Resources */,
 				51DF81B91619BC0F00F950E5 /* MarksHeaderTableCell.xib in Resources */,
 				51DF81BA1619BC0F00F950E5 /* MarksScrollingHeaderView.xib in Resources */,
 				51DF81BB1619BC0F00F950E5 /* MarksTableCell.xib in Resources */,
@@ -685,7 +676,6 @@
 				51D1549F160DE5B500524550 /* AppDelegate.m in Sources */,
 				51D154A8160DE5B500524550 /* MenuViewController.m in Sources */,
 				51D154DA160DE9D500524550 /* LoginViewController.m in Sources */,
-				51DF812B1619BA1700F950E5 /* MarksFooterTableCell.m in Sources */,
 				51DF812D1619BA1700F950E5 /* MarksHeaderTableCell.m in Sources */,
 				51DF812F1619BA1700F950E5 /* MarksScrollingHeaderView.m in Sources */,
 				51DF81311619BA1700F950E5 /* MarksTableCell.m in Sources */,
@@ -792,14 +782,6 @@
 				51DF81AB1619BB8100F950E5 /* en */,
 			);
 			name = MarksWindowHeader.xib;
-			sourceTree = "<group>";
-		};
-		51DF81B01619BC0F00F950E5 /* MarksFooterTableCell.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				51DF81B11619BC0F00F950E5 /* en */,
-			);
-			name = MarksFooterTableCell.xib;
 			sourceTree = "<group>";
 		};
 		51DF81B21619BC0F00F950E5 /* MarksHeaderTableCell.xib */ = {
