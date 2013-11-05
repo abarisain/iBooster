@@ -520,7 +520,7 @@ static const unsigned int TOP_BACKGROUND_HEIGHT               = 36;
 	
 	NSArray *monthSymbols = [formatter shortMonthSymbols];
 	
-	return [NSString stringWithFormat:@"%@, week %i",
+	return [NSString stringWithFormat:@"%@, semaine %i",
 			[monthSymbols objectAtIndex:[components month] - 1],
 			[components week]];
 }
