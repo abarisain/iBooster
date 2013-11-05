@@ -115,7 +115,7 @@
 		51D154A6160DE5B500524550 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		51D154A7160DE5B500524550 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		51D154AD160DE5B500524550 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MenuViewController.xib; sourceTree = "<group>"; };
-		51D154BD160DE5B600524550 /* iBoosterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = iBoosterTests.octest; path = dBoosterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D154BD160DE5B600524550 /* dBoosterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dBoosterTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D154BE160DE5B600524550 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		51D154C6160DE5B600524550 /* iBoosterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBoosterTests-Info.plist"; sourceTree = "<group>"; };
 		51D154C8160DE5B600524550 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				51D1548A160DE5B500524550 /* dBooster.app */,
-				51D154BD160DE5B600524550 /* iBoosterTests.octest */,
+				51D154BD160DE5B600524550 /* dBoosterTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -573,7 +573,7 @@
 			);
 			name = dBoosterTests;
 			productName = iBoosterTests;
-			productReference = 51D154BD160DE5B600524550 /* iBoosterTests.octest */;
+			productReference = 51D154BD160DE5B600524550 /* dBoosterTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
