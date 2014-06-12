@@ -73,17 +73,17 @@
 {
     if(buttonIndex < ([actionSheet numberOfButtons] - 1))
     {
-        [self refreshMarksWithId:buttonIndex + 1];
+        [self refreshMarksWithYear:[[levelsArray objectAtIndex:buttonIndex] objectForKey:@"value"]];
     }
 }
 
-- (void)refreshMarksWithId:(int)yearId
+- (void)refreshMarksWithYear:(NSString*)year
 {
     tableData = [NSArray new];
     [[self tableView] reloadData];
     [[self loadingView] setHidden:NO];
     self.navigationItem.rightBarButtonItem = nil;
-    NSDictionary *dict = [self executeToolkitMethod:@"selectMarkLevel" withArguments:[NSString stringWithFormat:@"%d", yearId] onWebView:internalWebView];
+    NSDictionary *dict = [self executeToolkitMethod:@"selectMarkLevel" withArguments:year onWebView:internalWebView];
     if(dict == nil)
         return;
     [self performSelector:@selector(parseRefreshedMarks) withObject:nil afterDelay:1.0 inModes:@[NSRunLoopCommonModes]];

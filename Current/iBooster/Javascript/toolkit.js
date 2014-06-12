@@ -21,18 +21,17 @@ iBoosterToolkit.checkIfLoggedIn = function () {
 }
 
 iBoosterToolkit.parseMarksLevels = function () {
-    var marksContainer = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain");
+    var marksContainer = $("#ctl00_ContentPlaceHolder1_ucStudentMark_ctl01_fstMain");
     if(marksContainer.length == 0) {
         return {"error": true};
     }
-    marksContainer = null;
     var parsedLevels = [];
     var i = 1;
-    var levels = $("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li").not(":first").each(function () {
+    var levels = marksContainer.find("select[name='ctl00$ContentPlaceHolder1$ucStudentMark$ctl01$ddlCursus']").find("option").not(":first").each(function () {
                                                                                                    var tmpLvl = {};
                                                                                                    tmpLvl.id = i;
-                                                                                                   tmpLvl.name = $(this).find("b").first()[0].innerHTML;
-                                                                                                   tmpLvl.value = $(this).find("i").first()[0].innerHTML;
+                                                                                                   tmpLvl.name = this.innerHTML;
+                                                                                                   tmpLvl.value = this.getAttribute("value");
                                                                                                    parsedLevels.push(tmpLvl);
                                                                                                    i++;
     });
@@ -40,27 +39,29 @@ iBoosterToolkit.parseMarksLevels = function () {
     return parsedLevels;
 }
 
-iBoosterToolkit.selectMarkLevel = function (id) {
-    $("#ob_iDdlODropCursusItemsContainer .ob_iDdlICBC").find("li")[id].onclick();
+iBoosterToolkit.selectMarkLevel = function (value) {
+    var yearSelect = $("#ctl00_ContentPlaceHolder1_ucStudentMark_ctl01_fstMain select[name='ctl00$ContentPlaceHolder1$ucStudentMark$ctl01$ddlCursus']");
+    yearSelect.val(value);
+    yearSelect.trigger("change");
     return {};
 }
 
 iBoosterToolkit.parseMarks = function () {
     //console.time("counter");
-    var spinWheelContainer = document.getElementById("ctl00_ContentPlaceHolder1_Lab1_upMain");
+    var spinWheelContainer = document.getElementById("ctl00_ContentPlaceHolder1_ucStudentMark_upMain");
     if(spinWheelContainer.getAttribute("aria-hidden") == "false")
     {
         //Not loaded yet
         return {"error": true, "loading": true};
     }
-    var marksContainer = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain");
+    var marksContainer = $("#ctl00_ContentPlaceHolder1_ucStudentMark_ctl01_fstMain");
     if(marksContainer.length == 0) {
         return {"error": true};
     }
     var parsedLevels = iBoosterToolkit.parseMarksLevels();
     marksContainer = null;
     var marks = [];
-    var tables = $("#ctl00_ContentPlaceHolder1_Lab1_ctl01_fstMain").find("table").not(":first").each(function () {
+    var tables = $("#ctl00_ContentPlaceHolder1_ucStudentMark_ctl01_fstMain").find("div").find("table").each(function () {
         marks.push(iBoosterToolkit.parseMarkTable($(this)));
     });
     //console.timeEnd("counter");
@@ -73,7 +74,7 @@ iBoosterToolkit.parseMarkTable = function (table) {
     //On enleve le span pour recup le nom de la matiere, mais on recup ce span en meme temps !
     //Le parsing est destructeur, je sais.
     var subjectInfo = table.find("tr td span").eq(0).remove()[0].innerHTML;
-    parsedTable.title = table.find("tr td")[0].innerHTML.replace(/(&nbsp;)*/g,"");
+    parsedTable.title = table.find("tr td")[0].innerText.replace(/(&nbsp;)*/g,"");
     parsedTable.code = subjectInfo.substring(1,6);
     parsedTable.credits = subjectInfo.match(/:[0-9]+\)/g)[0].replace(/\)/g, "").replace(/:/g, "");
 
